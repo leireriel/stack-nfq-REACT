@@ -3,9 +3,14 @@ import './styles.scss';
 // import PropTypes from 'prop-types';
 // import { makeStyles } from '@material-ui/core/styles';
 // import Typography from '@material-ui/core/Typography';
-import Modal from '@material-ui/core/Modal';
+// import Modal from '@material-ui/core/Modal';
 // import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 class ModalInfo extends Component {
   constructor(props) {
@@ -37,8 +42,9 @@ class ModalInfo extends Component {
   render() {
     const { helperText, errorInfo } = this.state;
     return (
-      <Modal open={true}>
-        <form noValidate autoComplete="off">
+      <Dialog open={true} aria-labelledby="form-dialog-title">
+        <DialogTitle id="form-dialog-title">Añade una nueva pregunta</DialogTitle>
+        <DialogContent>
           <TextField
             helperText={helperText}
             onChange={event => {
@@ -79,8 +85,23 @@ class ModalInfo extends Component {
             id="outlined-required"
             label="Detalle Pregunta"
           />
-        </form>
-      </Modal>
+        </DialogContent>
+        <DialogActions>
+          <Button color="primary">
+            Cancelar
+          </Button>
+          <Button color="primary">
+            Aceptar
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+
+      // <Modal open={true}>
+      //   <form noValidate autoComplete="off">
+          
+      //   </form>
+      // </Modal>
     );
   }
 }
