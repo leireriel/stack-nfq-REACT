@@ -1,16 +1,22 @@
-import React from 'react';
+import React, {Component, Fragment} from 'react';
 import Question from './Question/index.js';
 import './styles.scss';
 import PropTypes from 'prop-types';
+import FloatingActionButtons from './Button/index.js';
 
 
-class StackList extends React.Component {
+
+
+class StackList extends Component {
   render() {
     const { dataQuestion } = this.props;    
     return (
-      <ul className="list">
-      <Question dataQuestion={dataQuestion}/>
-      </ul>
+      <Fragment>
+        <ul className="list">
+          <Question dataQuestion={dataQuestion}/>
+        </ul>
+        <FloatingActionButtons />
+      </Fragment>
     );
   }
 }
