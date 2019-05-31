@@ -11,38 +11,39 @@ class StackList extends Component {
 
     this.state = {
       isOpen: false
-    }
+    };
 
-    this.dialogueFunction = this.dialogueFunction.bind(this)
+    this.dialogueFunction = this.dialogueFunction.bind(this);
   }
 
-  dialogueFunction() { 
-    this.setState( prevState => { 
-      return { isOpen : !prevState.isOpen }} );
+  dialogueFunction() {
+    this.setState(prevState => {
+      return { isOpen: !prevState.isOpen };
+    });
   }
 
   render() {
-    const { dataQuestion } = this.props; 
-    const {isOpen} = this.state;   
+    const { dataQuestion } = this.props;
+    const { isOpen } = this.state;
     return (
       <div>
         <ul className="list">
           {dataQuestion.map(item => {
-            return(
+            return (
               <li className="question__item" key={item.id}>
                 <Question item={item} />
               </li>
             );
           })}
         </ul>
-        <FloatingActionButtons dialogueFunction={this.dialogueFunction}/>
-        {isOpen && <ModalInfo dialogueFunction={this.dialogueFunction}/>}
-      </div> 
+        <FloatingActionButtons dialogueFunction={this.dialogueFunction} />
+        {isOpen && <ModalInfo dialogueFunction={this.dialogueFunction} />}
+      </div>
     );
   }
 }
 
 StackList.propTypes = {
-  dataQuestion: PropTypes.array,
+  dataQuestion: PropTypes.arrayOf(PropTypes.object)
 };
 export default StackList;
