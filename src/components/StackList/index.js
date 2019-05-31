@@ -13,11 +13,12 @@ class StackList extends Component {
       isOpen: false
     }
 
-    this.openDialogue = this.openDialogue.bind(this)
+    this.dialogueFunction = this.dialogueFunction.bind(this)
   }
 
-  openDialogue() { 
-    this.setState( { isOpen : true } );
+  dialogueFunction() { 
+    this.setState( prevState => { 
+      return { isOpen : !prevState.isOpen }} );
   }
 
   render() {
@@ -34,8 +35,8 @@ class StackList extends Component {
             );
           })}
         </ul>
-        <FloatingActionButtons openDialogue={this.openDialogue}/>
-        {isOpen && <ModalInfo/>}
+        <FloatingActionButtons dialogueFunction={this.dialogueFunction}/>
+        {isOpen && <ModalInfo dialogueFunction={this.dialogueFunction}/>}
       </div> 
     );
   }

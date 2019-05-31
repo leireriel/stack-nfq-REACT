@@ -41,6 +41,7 @@ class ModalInfo extends Component {
 
   render() {
     const { helperText, errorInfo } = this.state;
+    const { dialogueFunction } = this.props;
     return (
       <Dialog open={true} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Añade una nueva pregunta</DialogTitle>
@@ -87,7 +88,7 @@ class ModalInfo extends Component {
           />
         </DialogContent>
         <DialogActions>
-          <Button color="primary">
+          <Button color="primary" onClick={dialogueFunction}>
             Cancelar
           </Button>
           <Button color="primary">
