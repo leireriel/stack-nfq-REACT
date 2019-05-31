@@ -21,8 +21,9 @@ class Form extends Component {
   }
 
   handleChange = inputId => event => {
+    const { value } = event.target;
     this.setState(prevState => {
-      const newAnswer = { ...this.answerToAdd, [inputId]: event.target.value };
+      const newAnswer = { ...prevState.answerToAdd, [inputId]: value };
       return { answerToAdd: newAnswer };
     });
   };
@@ -33,7 +34,7 @@ class Form extends Component {
     return (
       <Grid item xs={12}>
         <Paper className={classPaper}>
-          <TextField id="name__input" label="Nombre usuario" fullWidth={true} value={author} onChange={this.handleChange('name')} variant="outlined" errorText="Name can't be empty, Please Fill this field" type="text" margin="normal" />
+          <TextField id="name__input" label="Nombre usuario" fullWidth={true} value={author} onChange={this.handleChange('author')} variant="outlined" errorText="Name can't be empty, Please Fill this field" type="text" margin="normal" />
           <TextField id="answer__input" label="Respuesta" fullWidth={true} value={answer} onChange={this.handleChange('answer')} errorText="Answer can't be empty, Please Fill this field" type="text" variant="outlined" multiline={true} rows="10" margin="normal" />
         </Paper>
       </Grid>
