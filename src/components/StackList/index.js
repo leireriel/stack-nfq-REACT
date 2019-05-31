@@ -9,7 +9,13 @@ class StackList extends React.Component {
     const { dataQuestion } = this.props;    
     return (
       <ul className="list">
-      <Question dataQuestion={dataQuestion}/>
+        {dataQuestion.map(item => {
+          return(
+            <li className="question__item" key={item.id}>
+              <Question item={item} />
+            </li>
+          );
+        })}
       </ul>
     );
   }
