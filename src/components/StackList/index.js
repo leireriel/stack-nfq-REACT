@@ -11,12 +11,15 @@ class StackList extends Component {
   render() {
     const { dataQuestion } = this.props;    
     return (
-      <Fragment>
-        <ul className="list">
-          <Question dataQuestion={dataQuestion}/>
-        </ul>
-        <FloatingActionButtons />
-      </Fragment>
+      <ul className="list">
+        {dataQuestion.map(item => {
+          return(
+            <li className="question__item" key={item.id}>
+              <Question item={item} />
+            </li>
+          );
+        })}
+      </ul>
     );
   }
 }
