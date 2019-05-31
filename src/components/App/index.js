@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { fetchQuestion } from '../../services/fetchQuestion';
+import StackList from '../StackList/index.js';
 import './styles.scss';
 
 class App extends Component {
@@ -24,14 +25,11 @@ class App extends Component {
   }
 
   render() {
+    const { dataQuestion } = this.state;
     return (
-      <ol className="list">
-        {this.state.dataQuestion.map(item => {
-          return (
-            <li key={item.id}>{item.author}</li>
-          )
-        })}
-      </ol>
+      <React.Fragment>
+        <StackList dataQuestion={dataQuestion} />
+      </React.Fragment>
     )
   }
 }
