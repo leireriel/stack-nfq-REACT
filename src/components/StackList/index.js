@@ -1,15 +1,29 @@
-import React, {Component, Fragment} from 'react';
+import React, { Component } from 'react';
+import ModalInfo from './ModalInfo';
 import Question from './Question/index.js';
-import './styles.scss';
 import PropTypes from 'prop-types';
 import FloatingActionButtons from './Button/index.js';
-
-
-
+import './styles.scss';
 
 class StackList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false
+    }
+
+    this.dialogueFunction = this.dialogueFunction.bind(this)
+  }
+
+  dialogueFunction() { 
+    this.setState( prevState => { 
+      return { isOpen : !prevState.isOpen }} );
+  }
+
   render() {
-    const { dataQuestion } = this.props;    
+    const { dataQuestion } = this.props; 
+    const {isOpen} = this.state;   
     return (
       <div>
         <ul className="list">
@@ -21,7 +35,8 @@ class StackList extends Component {
             );
           })}
         </ul>
-        <FloatingActionButtons />
+        <FloatingActionButtons dialogueFunction={this.dialogueFunction}/>
+        {isOpen && <ModalInfo dialogueFunction={this.dialogueFunction}/>}
       </div> 
     );
   }

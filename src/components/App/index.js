@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { fetchQuestion } from '../../services/fetchQuestion';
-import StackList from '../StackList/index.js';
+import StackList from '../StackList';
 import './styles.scss';
 
 class App extends Component {
