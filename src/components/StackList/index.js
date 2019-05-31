@@ -11,19 +11,23 @@ class StackList extends Component {
   render() {
     const { dataQuestion } = this.props;    
     return (
-      <ul className="list">
-        {dataQuestion.map(item => {
-          return(
-            <li className="question__item" key={item.id}>
-              <Question item={item} />
-            </li>
-          );
-        })}
-      </ul>
+      <div>
+        <ul className="list">
+          {dataQuestion.map(item => {
+            return(
+              <li className="question__item" key={item.id}>
+                <Question item={item} />
+              </li>
+            );
+          })}
+        </ul>
+        <FloatingActionButtons />
+      </div> 
     );
   }
 }
-Question.propTypes = {
+
+StackList.propTypes = {
   dataQuestion: PropTypes.array,
 };
 export default StackList;
