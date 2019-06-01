@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { fetchQuestion } from '../../services/fetchQuestion';
+import { updateQuestion } from '../../services/updateQuestion';
 import StackList from '../StackList';
 import './styles.scss';
 import { Route, Switch, Redirect } from 'react-router-dom';
@@ -14,6 +15,7 @@ class App extends Component {
       dataQuestion: []
     };
     this.getQuestion = this.getQuestion.bind(this);
+    this.updateQuestionAnswer = this.updateQuestionAnswer.bind(this);
   }
   componentDidMount() {
     this.getQuestion();
@@ -27,13 +29,19 @@ class App extends Component {
     });
   }
 
+  updateQuestionAnswer(question) {
+    updateQuestion(question)
+      .then(response => console.log('Success:', response))
+      .catch(error => console.error('Error:', error));
+  }
+
   render() {
     const { dataQuestion } = this.state;
     return (
       <Switch>
         <Route exact path="/home" render={() => <Home />} />
         <Route exact path="/questions" render={() => <StackList dataQuestion={dataQuestion} />} />
-        <Route exact path="/question/:id" render={routeProps => <QuestionDetails id={routeProps.match.params.id} dataQuestion={dataQuestion} />} />
+        <Route exact path="/question/:id" render={routeProps => <QuestionDetails id={routeProps.match.params.id} dataQuestion={dataQuestion} updateQuestion={this.updateQuestionAnswer} />} />
         {/* <Route exact path="/card" render={() => <TeamInfo />} /> */}
         <Redirect from="/" to="/home" />
       </Switch>

@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 class Form extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class Form extends Component {
       }
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleAddAnswer = this.handleAddAnswer.bind(this);
   }
 
   handleChange = inputId => event => {
@@ -30,10 +32,30 @@ class Form extends Component {
     });
   };
 
+  handleAddAnswer() {
+    // validate all inputs sre filled
+    // this.props.updateQuestion();
+    // fetch put to add answer...
+    this.setState(
+      prevState => {
+        const newAnswer = { ...prevState.answerToAdd, date: moment().format('YYYY-MM-DDTHH:MM:SS') };
+        return { answerToAdd: newAnswer };
+      },
+      () => this.addAnswerToQuestionObject()
+    );
+  }
+
+  addAnswerToQuestionObject() {
+    const updatedQuestion = {
+      ...this.props.questionItem
+    };
+    updatedQuestion.answers.push(this.state.answerToAdd);
+    this.props.updateQuestion(updatedQuestion);
+  }
+
   render() {
     const { classPaper } = this.props;
     const { answer, author } = this.state.answerToAdd;
-
     return (
       <Grid item xs={12}>
         <Paper className={classPaper}>
@@ -44,7 +66,7 @@ class Form extends Component {
               <Button variant="contained" className="form__button cancel__answer">
                 cancelar
               </Button>
-              <Button variant="contained" color="primary" className="form__button add__answer">
+              <Button variant="contained" color="primary" className="form__button add__answer" onClick={this.handleAddAnswer}>
                 aceptar
               </Button>
             </div>
@@ -56,7 +78,9 @@ class Form extends Component {
 }
 
 Form.propTypes = {
-  classPaper: PropTypes.string.isRequired
+  classPaper: PropTypes.string.isRequired,
+  updatedQuestion: PropTypes.func,
+  questionItem: PropTypes.object
 };
 
 export default Form;
