@@ -5,6 +5,7 @@ import Footer from '../Footer/index';
 import FloatingActionButtons from './Button/index';
 import PropTypes from 'prop-types';
 import './styles.scss';
+import Header from '../Header/index';
 
 class StackList extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class StackList extends Component {
     const { isOpen } = this.state;
     return (
       <div>
+        <Header />
         <ul className="list">
           {dataQuestion.map(item => {
             return (
