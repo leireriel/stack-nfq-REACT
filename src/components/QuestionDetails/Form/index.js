@@ -24,6 +24,7 @@ class Form extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleAddAnswer = this.handleAddAnswer.bind(this);
+    this.resetAnswer = this.resetAnswer.bind(this);
   }
 
   handleChange = inputId => ({ target: { value } }) => {
@@ -50,13 +51,21 @@ class Form extends Component {
     };
     updatedQuestion.answers.push(this.state.answerToAdd);
     this.props.updateQuestion(updatedQuestion);
-    // reset answer in the state
+    this.resetAnswer();
+
+  }
+
+  resetAnswer() {
     this.setState({
       answerToAdd: {
         answer: '',
         author: '',
         likes: 0,
         date: ''
+      },
+      error: {
+        answer: false,
+        author: false
       }
     });
   }
@@ -91,10 +100,15 @@ class Form extends Component {
             error={error.answer}
             />
             <div className="buttons__container">
-              <Button variant="contained" className="form__button cancel__answer">
+              <Button variant="contained" className="form__button cancel__answer" onClick={this.resetAnswer}>
                 cancelar
               </Button>
-              <Button variant="contained" color="primary" className="form__button add__answer" onClick={this.handleAddAnswer} disabled={!answer || !author}>
+              <Button
+              variant="contained"
+              color="primary"
+              className="form__button add__answer"
+              onClick={this.handleAddAnswer}
+              disabled={!answer || !author}>
                 aceptar
               </Button>
             </div>
