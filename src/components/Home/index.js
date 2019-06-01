@@ -6,9 +6,9 @@ class Home extends Component {
   render() {
     return (
       <React.Fragment>
-      <div> home</div>
-      <Footer />
-    </React.Fragment>
+        <div> home</div>
+        <Footer />
+      </React.Fragment>
     );
     
   }

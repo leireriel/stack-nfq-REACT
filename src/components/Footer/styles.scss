@@ -1,0 +1,20 @@
+@import "../../scss/colors.scss";
+@import "../../scss/variables.scss";
+
+
+.container__footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  bottom: -100px;
+  background-color: $colorblue;
+  font-family: $defaultfont;
+}
+
+.footer__nfq{
+  height: 40px;
+}
+.footer__adalab{
+  height: 40px;
+}
