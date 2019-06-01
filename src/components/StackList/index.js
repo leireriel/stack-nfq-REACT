@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import ModalInfo from './ModalInfo';
-import Question from './Question/index.js';
+import Question from './Question/index';
+import Footer from '../Footer/index';
+import FloatingActionButtons from './Button/index';
 import PropTypes from 'prop-types';
-import FloatingActionButtons from './Button/index.js';
 import './styles.scss';
 
 class StackList extends Component {
@@ -38,6 +39,7 @@ class StackList extends Component {
         </ul>
         <FloatingActionButtons dialogueFunction={this.dialogueFunction} />
         {isOpen && <ModalInfo dialogueFunction={this.dialogueFunction} />}
+        <Footer />
       </div>
     );
   }
