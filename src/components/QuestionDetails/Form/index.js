@@ -52,7 +52,6 @@ class Form extends Component {
     updatedQuestion.answers.push(this.state.answerToAdd);
     this.props.updateQuestion(updatedQuestion);
     this.resetAnswer();
-
   }
 
   resetAnswer() {
@@ -72,43 +71,21 @@ class Form extends Component {
 
   render() {
     const { classPaper } = this.props;
-    const { error, answerToAdd: { answer, author } } = this.state;
+    const {
+      error,
+      answerToAdd: { answer, author }
+    } = this.state;
     return (
       <Grid item xs={12}>
         <Paper className={classPaper}>
           <form noValidate autoComplete="off">
-            <TextField
-            label="Nombre usuario"
-            fullWidth
-            value={author}
-            onChange={this.handleChange('author')}
-            variant="outlined"
-            type="text"
-            margin="normal"
-            error={error.author}
-            />
-            <TextField
-            label="Respuesta"
-            fullWidth
-            value={answer}
-            onChange={this.handleChange('answer')}
-            type="text"
-            variant="outlined"
-            multiline
-            rows="10"
-            margin="normal"
-            error={error.answer}
-            />
+            <TextField label="Nombre usuario" fullWidth value={author} onChange={this.handleChange('author')} variant="outlined" type="text" margin="normal" error={error.author} />
+            <TextField label="Respuesta" fullWidth value={answer} onChange={this.handleChange('answer')} type="text" variant="outlined" multiline rows="10" margin="normal" error={error.answer} />
             <div className="buttons__container">
               <Button variant="contained" className="form__button cancel__answer" onClick={this.resetAnswer}>
                 cancelar
               </Button>
-              <Button
-              variant="contained"
-              color="primary"
-              className="form__button add__answer"
-              onClick={this.handleAddAnswer}
-              disabled={!answer || !author}>
+              <Button variant="contained" color="primary" className="form__button add__answer" onClick={this.handleAddAnswer} disabled={!answer || !author}>
                 aceptar
               </Button>
             </div>
