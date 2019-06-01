@@ -31,7 +31,14 @@ class App extends Component {
 
   updateQuestionAnswer(question) {
     updateQuestion(question)
-      .then(response => console.log('Success:', response))
+      .then(updatedQuestion => {
+        console.log('Success:', updatedQuestion);
+        const newQuestionsArr = [...this.state.dataQuestion];
+        const index = newQuestionsArr.findIndex(question => question.id === updatedQuestion.id);
+        newQuestionsArr[index] = updatedQuestion;
+        this.setState({ dataQuestion: newQuestionsArr });
+      })
+
       .catch(error => console.error('Error:', error));
   }
 
