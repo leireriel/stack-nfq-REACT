@@ -5,12 +5,13 @@ import Footer from '../Footer/index';
 class Home extends Component {
   render() {
     return (
-      <React.Fragment>
-        <div> home</div>
+      <div className="page__home">
+        <div>home</div>
+        <div className="home__main">qué haces
+        </div>
         <Footer />
-      </React.Fragment>
+      </div>
     );
-    
   }
 }
 
