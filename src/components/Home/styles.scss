@@ -14,6 +14,18 @@ body{
   min-height: 100vh;
 }
 
+.container__header--home {
+  
+  background-color: $colorlightblue;
+
+}
+.header__home {
+  
+  margin-top: 345px;
+
+
+}
+
 .home__main{
   display: flex;
   flex-direction: column;
