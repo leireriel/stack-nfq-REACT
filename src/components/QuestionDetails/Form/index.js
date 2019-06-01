@@ -11,8 +11,10 @@ class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      errorNameInput: false,
-      errorAnswerInput: false,
+      error: {
+        answer: false,
+        author: false
+      },
       answerToAdd: {
         answer: '',
         author: '',
@@ -25,16 +27,14 @@ class Form extends Component {
   }
 
   handleChange = inputId => ({ target: { value } }) => {
-    // const { value } = event.target;
     this.setState(prevState => {
       const newAnswer = { ...prevState.answerToAdd, [inputId]: value };
-      return { answerToAdd: newAnswer };
+      const newError = { ...prevState.error, [inputId]: value ? false : true };
+      return { answerToAdd: newAnswer, error: newError };
     });
   };
 
   handleAddAnswer() {
-    // validate all inputs are filled
-    // fetch put to add answer...
     this.setState(
       prevState => {
         const newAnswer = { ...prevState.answerToAdd, date: moment().format('YYYY-MM-DDTHH:MM:SS') };
@@ -63,18 +63,38 @@ class Form extends Component {
 
   render() {
     const { classPaper } = this.props;
-    const { answer, author } = this.state.answerToAdd;
+    const { error, answerToAdd: { answer, author } } = this.state;
     return (
       <Grid item xs={12}>
         <Paper className={classPaper}>
           <form noValidate autoComplete="off">
-            <TextField label="Nombre usuario" fullWidth={true} value={author} onChange={this.handleChange('author')} variant="outlined" type="text" margin="normal" />
-            <TextField label="Respuesta" fullWidth={true} value={answer} onChange={this.handleChange('answer')} type="text" variant="outlined" multiline={true} rows="10" margin="normal" />
+            <TextField
+            label="Nombre usuario"
+            fullWidth
+            value={author}
+            onChange={this.handleChange('author')}
+            variant="outlined"
+            type="text"
+            margin="normal"
+            error={error.author}
+            />
+            <TextField
+            label="Respuesta"
+            fullWidth
+            value={answer}
+            onChange={this.handleChange('answer')}
+            type="text"
+            variant="outlined"
+            multiline
+            rows="10"
+            margin="normal"
+            error={error.answer}
+            />
             <div className="buttons__container">
               <Button variant="contained" className="form__button cancel__answer">
                 cancelar
               </Button>
-              <Button variant="contained" color="primary" className="form__button add__answer" onClick={this.handleAddAnswer}>
+              <Button variant="contained" color="primary" className="form__button add__answer" onClick={this.handleAddAnswer} disabled={!answer || !author}>
                 aceptar
               </Button>
             </div>
