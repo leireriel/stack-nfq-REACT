@@ -7,17 +7,21 @@ class Footer extends React.Component{
   render(){
     return(
       <div className="container__footer">
-        <img 
-          className="footer__nfq" 
-          src={logoNFQ}
-          alt="Logo de nfq"/>
-        <p className="footer__author">
+        <a href="https://nfq.es/" target="_blank">
+          <img 
+            className="footer__nfq" 
+            src={logoNFQ}
+            alt="Logo de nfq"/>
+        </a>
+        <p className="footer__author" target="_blank">
           Diseñado por el equipo | © 2019
         </p>
-        <img 
-          className="footer__adalab" 
-          src={logoAdalab} 
-          alt="Logo de Adalab"/>
+        <a href="https://adalab.es/">
+          <img 
+            className="footer__adalab" 
+            src={logoAdalab} 
+            alt="Logo de Adalab"/>
+        </a>
       </div>
     );
   }
