@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Form from './Form';
 import Answer from './Answer';
+import Footer from '../Footer';
 
 const styles = theme => ({
   root: {
@@ -68,6 +69,7 @@ const QuestionDetails = ({ dataQuestion, id, classes, updateQuestion }) => {
       ) : (
         <p>Loading...</p>
       )}
+      <Footer />
     </Fragment>
   );
 };
