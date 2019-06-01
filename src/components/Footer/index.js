@@ -13,10 +13,10 @@ class Footer extends React.Component{
             src={logoNFQ}
             alt="Logo de nfq"/>
         </a>
-        <p className="footer__author" target="_blank">
+        <p className="footer__author">
           Diseñado por el equipo | © 2019
         </p>
-        <a href="https://adalab.es/">
+        <a href="https://adalab.es/"  target="_blank">
           <img 
             className="footer__adalab" 
             src={logoAdalab} 
