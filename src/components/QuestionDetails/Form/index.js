@@ -24,8 +24,8 @@ class Form extends Component {
     this.handleAddAnswer = this.handleAddAnswer.bind(this);
   }
 
-  handleChange = inputId => event => {
-    const { value } = event.target;
+  handleChange = inputId => ({ target: { value } }) => {
+    // const { value } = event.target;
     this.setState(prevState => {
       const newAnswer = { ...prevState.answerToAdd, [inputId]: value };
       return { answerToAdd: newAnswer };
@@ -33,8 +33,7 @@ class Form extends Component {
   };
 
   handleAddAnswer() {
-    // validate all inputs sre filled
-    // this.props.updateQuestion();
+    // validate all inputs are filled
     // fetch put to add answer...
     this.setState(
       prevState => {
@@ -51,6 +50,15 @@ class Form extends Component {
     };
     updatedQuestion.answers.push(this.state.answerToAdd);
     this.props.updateQuestion(updatedQuestion);
+    // reset answer in the state
+    this.setState({
+      answerToAdd: {
+        answer: '',
+        author: '',
+        likes: 0,
+        date: ''
+      }
+    });
   }
 
   render() {
@@ -60,8 +68,8 @@ class Form extends Component {
       <Grid item xs={12}>
         <Paper className={classPaper}>
           <form noValidate autoComplete="off">
-            <TextField id="name__input" label="Nombre usuario" fullWidth={true} value={author} onChange={this.handleChange('author')} variant="outlined" type="text" margin="normal" />
-            <TextField id="answer__input" label="Respuesta" fullWidth={true} value={answer} onChange={this.handleChange('answer')} type="text" variant="outlined" multiline={true} rows="10" margin="normal" />
+            <TextField label="Nombre usuario" fullWidth={true} value={author} onChange={this.handleChange('author')} variant="outlined" type="text" margin="normal" />
+            <TextField label="Respuesta" fullWidth={true} value={answer} onChange={this.handleChange('answer')} type="text" variant="outlined" multiline={true} rows="10" margin="normal" />
             <div className="buttons__container">
               <Button variant="contained" className="form__button cancel__answer">
                 cancelar
