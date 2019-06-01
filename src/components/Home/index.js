@@ -1,8 +1,18 @@
 import './styles.scss';
 import React, { Component } from 'react';
+import Footer from '../Footer/index';
 
-export default class Home extends Component {
+class Home extends Component {
   render() {
-    return <div> home</div>;
+    return (
+      <div className="page__home">
+        <div>home</div>
+        <div className="home__main">qué haces
+        </div>
+        <Footer />
+      </div>
+    );
   }
 }
+
+export default Home;
