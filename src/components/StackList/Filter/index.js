@@ -6,10 +6,10 @@ class Filter extends Component {
     return (
       <Fragment>
         <div className="filter__wrapper">
-          <i class="fas fa-search"></i>
+          <i className="fas fa-search"></i>
           <form action="">
             <label htmlFor="searchQuestion"></label>
-            <input type="text" id="searchQuestion" placeholder="Buscar..."/>
+            <input type="text" id="searchQuestion" placeholder="Buscar..." />
           </form>
         </div>
       </Fragment>
