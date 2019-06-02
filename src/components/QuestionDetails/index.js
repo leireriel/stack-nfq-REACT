@@ -4,11 +4,14 @@ import PropTypes from 'prop-types';
 import { withStyles, createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
+import Avatar from '@material-ui/core/Avatar';
+import Grid from '@material-ui/core/Grid';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Form from './Form';
 import Answer from './Answer';
 import Header from './Header';
 import Footer from '../Footer';
+import avatarImg from '../../images/avatar.png';
 
 const theme = createMuiTheme({
   palette: {
@@ -23,7 +26,7 @@ const styles = theme => ({
     flexGrow: 1
   },
   paper: {
-    padding: theme.spacing(2)
+    padding: '30px'
   },
   paperForm: {
     backgroundColor: '#E8E8E8',
@@ -36,8 +39,18 @@ const styles = theme => ({
     fontWeight: 'bold',
     margin: '0 20px',
     padding: '10px 50px'
+  },
+  bigAvatar: {
+    margin: 10,
+    width: 60,
+    height: 60
   }
 });
+
+const formatDate = dateToFormat => {
+  const dateArr = dateToFormat.split('T');
+  return `Formulada el dia ${dateArr[0]} a las ${dateArr[1]}`;
+};
 
 const QuestionDetails = ({ dataQuestion, id, classes, updateQuestion }) => {
   const questionItem = dataQuestion.find(question => question.id === parseInt(id));
@@ -51,6 +64,12 @@ const QuestionDetails = ({ dataQuestion, id, classes, updateQuestion }) => {
               <Paper className={classes.paper}>
                 <div className="title__container">
                   <h1 className="question__title">{questionItem.question}</h1>
+                  <div className="question__user-container">
+                    <span className="question__author">{questionItem.author}</span>
+                    <Avatar alt="Remy Sharp" src={avatarImg} className={classes.bigAvatar} />
+                  </div>
+                </div>
+                <div className="subtitle__container">
                   <ul className="question__tags-list">
                     {questionItem.tags.split(',').map((tag, index) => (
                       <li className="question__tag" key={index}>
@@ -58,8 +77,7 @@ const QuestionDetails = ({ dataQuestion, id, classes, updateQuestion }) => {
                       </li>
                     ))}
                   </ul>
-                  <p className="question__author">{questionItem.author}</p>
-                  <p className="question__date">{questionItem.date}</p>
+                  <p className="question__date">{formatDate(questionItem.date)}</p>
                 </div>
                 <div className="question__content">{questionItem.content}</div>
               </Paper>
