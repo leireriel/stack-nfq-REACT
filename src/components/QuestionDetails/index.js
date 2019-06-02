@@ -5,7 +5,6 @@ import { withStyles, createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Avatar from '@material-ui/core/Avatar';
-import Grid from '@material-ui/core/Grid';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Form from './Form';
 import Answer from './Answer';
@@ -26,7 +25,7 @@ const styles = theme => ({
     flexGrow: 1
   },
   paper: {
-    padding: '30px'
+    padding: '20px 30px'
   },
   paperForm: {
     backgroundColor: '#E8E8E8',
@@ -41,7 +40,7 @@ const styles = theme => ({
     padding: '10px 50px'
   },
   bigAvatar: {
-    margin: 10,
+    margin: '10px 0 10px 10px',
     width: 60,
     height: 60
   }
@@ -49,7 +48,7 @@ const styles = theme => ({
 
 const formatDate = dateToFormat => {
   const dateArr = dateToFormat.split('T');
-  return `Formulada el dia ${dateArr[0]} a las ${dateArr[1]}`;
+  return `Formulada el día ${dateArr[0]} a las ${dateArr[1]}`;
 };
 
 const QuestionDetails = ({ dataQuestion, id, classes, updateQuestion }) => {
