@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import ModalInfo from './ModalInfo';
+import Filter from './Filter/index';
 import Question from './Question/index';
 import Footer from '../Footer/index';
 import FloatingActionButtons from './Button/index';
@@ -28,8 +29,9 @@ class StackList extends Component {
     const { dataQuestion } = this.props;
     const { isOpen } = this.state;
     return (
-      <div>
+      <Fragment>
         <Header />
+        <Filter />
         <ul className="list">
           {dataQuestion.map(item => {
             return (
@@ -42,7 +44,7 @@ class StackList extends Component {
         <FloatingActionButtons dialogueFunction={this.dialogueFunction} />
         {isOpen && <ModalInfo dialogueFunction={this.dialogueFunction} />}
         <Footer />
-      </div>
+      </Fragment>
     );
   }
 }
