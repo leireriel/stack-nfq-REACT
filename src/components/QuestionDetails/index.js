@@ -11,6 +11,7 @@ import Answer from './Answer';
 import Header from './Header';
 import Footer from '../Footer';
 import avatarImg from '../../images/avatar.png';
+import moment from 'moment';
 
 const theme = createMuiTheme({
   palette: {
@@ -48,6 +49,7 @@ const styles = theme => ({
 
 const formatDate = dateToFormat => {
   const dateArr = dateToFormat.split('T');
+  dateArr[0] = moment(dateArr[0]).format('DD/MM/YYYY');
   return `Formulada el día ${dateArr[0]} a las ${dateArr[1]}`;
 };
 
