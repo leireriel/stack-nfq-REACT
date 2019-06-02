@@ -13,6 +13,9 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       main: '#4595cb'
+    },
+    secondary: {
+      main: '#777777'
     }
   }
 });
@@ -79,7 +82,7 @@ class Form extends Component {
   }
 
   render() {
-    const { classPaper } = this.props;
+    const { classPaper, classButton } = this.props;
     const {
       error,
       answerToAdd: { answer, author }
@@ -92,10 +95,10 @@ class Form extends Component {
               <TextField label="Nombre usuario" fullWidth value={author} onChange={this.handleChange('author')} variant="outlined" type="text" margin="normal" error={error.author} />
               <TextField label="Respuesta" fullWidth value={answer} onChange={this.handleChange('answer')} type="text" variant="outlined" multiline rows="10" margin="normal" error={error.answer} />
               <div className="buttons__container">
-                <Button variant="contained" className="form__button cancel__answer" onClick={this.resetAnswer}>
+                <Button variant="contained" className={classButton} onClick={this.resetAnswer} color="secondary">
                   cancelar
                 </Button>
-                <Button variant="contained" color="primary" className="form__button add__answer" onClick={this.handleAddAnswer} disabled={!answer || !author} color="primary">
+                <Button variant="contained" color="primary" className={classButton} onClick={this.handleAddAnswer} disabled={!answer || !author}>
                   aceptar
                 </Button>
               </div>

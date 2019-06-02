@@ -1,0 +1,18 @@
+@import '../../scss/colors';
+
+.question__page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  flex-direction: column;
+}
+
+.question__main {
+  padding: 0 25px;
+  // flex-grow: 1;
+}
+
+.question__title {
+  color: $colorgrey;
+}
