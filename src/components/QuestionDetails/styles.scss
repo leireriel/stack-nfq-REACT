@@ -1,4 +1,5 @@
 @import '../../scss/colors';
+@import '../../scss/variables';
 
 .question__page {
   min-height: 100vh;
@@ -6,13 +7,19 @@
   justify-content: center;
   // align-items: center;
   flex-direction: column;
+  font-family: $defaultfont;
 }
 
 .question__main {
   padding: 0 25px;
-  // flex-grow: 1;
 }
 
 .question__title {
   color: $colorgrey;
+}
+
+.section__title {
+  color: $colorgrey;
+  font-weight: normal;
+  font-size: 20px;
 }
