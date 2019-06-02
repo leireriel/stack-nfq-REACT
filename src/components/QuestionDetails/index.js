@@ -19,7 +19,7 @@ const styles = theme => ({
   }
 });
 
-const QuestionDetails = ({ dataQuestion, id, classes }) => {
+const QuestionDetails = ({ dataQuestion, id, classes, updateQuestion }) => {
   const questionItem = dataQuestion.find(question => question.id === parseInt(id));
   return (
     <Fragment>
@@ -62,7 +62,7 @@ const QuestionDetails = ({ dataQuestion, id, classes }) => {
 
           <section className="section__form">
             <h3 className="section__title">Añade tu respuesta</h3>
-            <Form classPaper={classes.paper} />
+            <Form classPaper={classes.paper} questionItem={questionItem} updateQuestion={updateQuestion} />
           </section>
         </main>
       ) : (
@@ -75,7 +75,8 @@ const QuestionDetails = ({ dataQuestion, id, classes }) => {
 QuestionDetails.propTypes = {
   dataQuestion: PropTypes.arrayOf(PropTypes.object),
   id: PropTypes.string,
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  updateQuestion: PropTypes.func
 };
 
 export default withStyles(styles)(QuestionDetails);
