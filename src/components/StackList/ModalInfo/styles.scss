@@ -1,0 +1,11 @@
+@import '../../../scss/colors';
+@import '../../../scss/variables';
+
+.MuiDialog-container {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.dialog__title {
+  color: $colorblue;
+  text-align: center;
+}
