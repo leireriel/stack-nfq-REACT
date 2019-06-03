@@ -18,14 +18,10 @@ class Answer extends React.Component{
     const {answers, questionItem, index, updateQuestion} =this.props;
     let likes = parseInt(answers.likes);
       this.setState((prevState, props) => {
-        let newLikes = {...questionItem.answers[index].likes};
-        newLikes = likes + 1 ;
-        console.log(newLikes)
-        return(
-          answers.likes = newLikes
-        )
-        
-      })
+        answers.likes ++ ;
+        updateQuestion(questionItem);
+      }
+    )
   }
   
 
