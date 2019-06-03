@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.scss';
-import logoStackList from '../../images/logo-stackList.svg';
+import logoStackList from '../../images/LOGO_blue.svg';
 import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
