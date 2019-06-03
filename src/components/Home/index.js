@@ -18,6 +18,9 @@ function Home () {
           <h1 className="home__title">
             La respuesta que necesitas a tus problemas de desarrollo
           </h1>
+          <Link to="/team">
+            <button className="info__btn">i</button>
+          </Link>
           <Link to="/questions">
             <button className="home__btn">
               Acceder
