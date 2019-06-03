@@ -1,14 +1,19 @@
 import './styles.scss';
 import { Link } from 'react-router-dom';
-import React, { Component } from 'react';
+import React from 'react';
 import Footer from '../Footer/index';
+import logoHome  from '../Images/LOGO.svg';
 
-
-class Home extends Component {
-  render() {
+function Home () {      
     return (
       <div className="page__home">
-        <div>home</div>
+        <header className="container__header--home">
+          <img 
+            className="header__home" 
+            src={logoHome}
+            alt="Logotipo de nfq stack en página Home"
+            />
+        </header>
         <div className="home__main">
           <h1 className="home__title">
             La respuesta que necesitas a tus problemas de desarrollo
@@ -23,6 +28,6 @@ class Home extends Component {
       </div>
     );
   }
-}
+
 
 export default Home;

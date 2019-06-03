@@ -1,6 +1,6 @@
 import './styles.scss';
 import React from 'react';
-import logoStackList from '../../images/logo-stackList.svg';
+import logoStackList  from '../Images/LOGO_blue.svg';
 
 class Header extends React.Component {
   render() {
