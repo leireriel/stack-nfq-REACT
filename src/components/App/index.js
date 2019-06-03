@@ -6,6 +6,7 @@ import './styles.scss';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Home from '../Home';
 import QuestionDetails from '../QuestionDetails';
+import { createQuestion } from '../../services/createQuestion';
 // import TeamInfo from '../TeamInfo';
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
       dataQuestion: []
     };
     this.getQuestion = this.getQuestion.bind(this);
+    this.createNewQuestion = this.createNewQuestion.bind(this);
     this.updateQuestionAnswer = this.updateQuestionAnswer.bind(this);
   }
   componentDidMount() {
@@ -27,6 +29,15 @@ class App extends Component {
         dataQuestion: data
       });
     });
+  }
+
+  createNewQuestion(question) {
+    createQuestion(question) 
+    .then(questionData => {
+      const newArrQuestions = [...this.state.dataQuestion]
+      newArrQuestions.push(questionData)
+      this.setState( {dataQuestion : newArrQuestions} )
+     })
   }
 
   updateQuestionAnswer(question) {
@@ -45,7 +56,7 @@ class App extends Component {
     return (
       <Switch>
         <Route exact path="/home" render={() => <Home />} />
-        <Route exact path="/questions" render={() => <StackList dataQuestion={dataQuestion} />} />
+        <Route exact path="/questions" render={() => <StackList dataQuestion={dataQuestion} createNewQuestion={this.createNewQuestion}/>} />
         <Route exact path="/question/:id" render={routeProps => <QuestionDetails id={routeProps.match.params.id} dataQuestion={dataQuestion} updateQuestion={this.updateQuestionAnswer} />} />
         {/* <Route exact path="/card" render={() => <TeamInfo />} /> */}
         <Redirect from="/" to="/home" />

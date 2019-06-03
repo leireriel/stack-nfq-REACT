@@ -2,7 +2,7 @@ import './styles.scss';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import Footer from '../Footer/index';
-import logoHome  from '../Images/LOGO.svg';
+import logoHome  from '../../images/LOGO.svg';
 
 function Home () {      
     return (

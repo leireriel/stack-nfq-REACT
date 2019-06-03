@@ -1,112 +1,130 @@
 import React, { Component } from 'react';
 import './styles.scss';
-// import PropTypes from 'prop-types';
-// import { makeStyles } from '@material-ui/core/styles';
-// import Typography from '@material-ui/core/Typography';
-// import Modal from '@material-ui/core/Modal';
-// import Button from '@material-ui/core/Button';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import moment from 'moment';
+import PropTypes from 'prop-types';
 
 class ModalInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      helperText: '',
-      errorInfo: {
+      createQuestion: {
+        name: '',
+        tags: '',
+        title: '',
+        details: ''
+      },
+      error : {
         name: false,
         tags: false,
         title: false,
         details: false
       }
     };
+    
     this.handleChange = this.handleChange.bind(this);
+    this.sendQuestion = this.sendQuestion.bind(this);
   }
 
-  handleChange(event, infoInput) {
-    if (event.target.value.length) {
-      this.setState(prevState => {
-        let errorField = { ...prevState.errorInfo };
-        errorField[infoInput] = false;
-        return { helperText: '', errorInfo: errorField };
-      });
-    } else {
-      this.setState({ helperText: 'Please fill this field', error: true });
+  handleChange = inputInfo => event => {
+    const inputValue = event.target.value;
+    this.setState(prevState => {
+      const newQuestion = { ...prevState.createQuestion, [inputInfo] : inputValue};
+      const newError = { ...prevState.error, [inputInfo]: inputValue ? false : true };
+      return { error : newError, createQuestion : newQuestion };
+    });
+  };
+
+  sendQuestion() {
+    const newQuestion = {
+      ...this.state.createQuestion, answers : [], date: moment().format('YYYY-MM-DDTHH:MM:SS'), id: this.props.arrLength + 1
     }
-  }
+    this.props.createNewQuestion(newQuestion);
+    this.setState( {
+        createQuestion: {
+          name: '',
+          tags: '',
+          title: '',
+          details: ''
+        },
+        error : {
+          name: false,
+          tags: false,
+          title: false,
+          details: false
+        }
+      })
+    this.props.dialogueFunction();
+  } 
 
   render() {
-    const { helperText, errorInfo } = this.state;
+    const { createQuestion: {name, tags, title, details}, error } = this.state;
     const { dialogueFunction } = this.props;
     return (
       <Dialog open={true} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Añade una nueva pregunta</DialogTitle>
         <DialogContent>
           <TextField
-            helperText={helperText}
-            onChange={event => {
-              this.handleChange(event, 'name');
-            }}
-            error={errorInfo.name}
+            onChange={this.handleChange('name')}
+            value={name}
             required
-            id="outlined-required"
             label="Nombre Usuario"
+            error={error.name}
+            helperText={error.name ? 'Por favor, rellena este campo' : ''}
+            fullWidth
           />
           <TextField
-            helperText={helperText}
-            onChange={event => {
-              this.handleChange(event, 'tags');
-            }}
-            error={errorInfo.tags}
+            onChange={this.handleChange('tags')}
+            value={tags}
             required
-            id="outlined-required"
             label="Tags"
+            error={error.tags}
+            helperText={error.tags ? 'Por favor, rellena este campo' : ''}
+            fullWidth
           />
           <TextField
-            helperText={helperText}
-            onChange={event => {
-              this.handleChange(event, 'title');
-            }}
-            error={errorInfo.title}
+            onChange={this.handleChange('title')}
+            value={title}
             required
-            id="outlined-required"
             label="Titulo Pregunta"
+            error={error.title}
+            helperText={error.title ? 'Por favor, rellena este campo' : ''}
+            fullWidth
           />
           <TextField
-            helperText={helperText}
-            onChange={event => {
-              this.handleChange(event, 'details');
-            }}
-            error={errorInfo.details}
+            onChange={this.handleChange('details')}
+            value={details}
             required
-            id="outlined-required"
             label="Detalle Pregunta"
+            error={error.details}
+            helperText={error.details ? 'Por favor, rellena este campo' : ''}
+            fullWidth
+            multiline
+            rows='10'
           />
         </DialogContent>
         <DialogActions>
           <Button color="primary" onClick={dialogueFunction}>
             Cancelar
           </Button>
-          <Button color="primary">
+          <Button color="primary" disabled={!name || !tags || !title || !details} onClick={this.sendQuestion}>
             Aceptar
           </Button>
         </DialogActions>
       </Dialog>
-
-
-      // <Modal open={true}>
-      //   <form noValidate autoComplete="off">
-          
-      //   </form>
-      // </Modal>
     );
   }
 }
 
-// Modal.propTypes = {};
+ModalInfo.propTypes = {
+  arrLength: PropTypes.arrayOf(PropTypes.number),
+  createNewQuestion: PropTypes.func,
+  dialogueFunction: PropTypes.func
+};
 
 export default ModalInfo;
