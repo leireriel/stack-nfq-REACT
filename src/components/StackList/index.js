@@ -28,18 +28,20 @@ class StackList extends Component {
     const { dataQuestion } = this.props;
     const { isOpen } = this.state;
     return (
-      <div>
+      <div className="container__stacklist">
         <Header />
-        <ul className="list">
-          {dataQuestion.map(item => {
-            return (
-              <li className="question__item" key={item.id}>
-                <Question item={item} />
-              </li>
-            );
-          })}
-        </ul>
-        <FloatingActionButtons dialogueFunction={this.dialogueFunction} />
+        <main>
+          <ul className="list">
+            {dataQuestion.map(item => {
+              return (
+                <li className="question__item" key={item.id}>
+                  <Question item={item} />
+                </li>
+              );
+            })}
+          </ul>
+          <FloatingActionButtons dialogueFunction={this.dialogueFunction} />
+        </main>
         {isOpen && <ModalInfo dialogueFunction={this.dialogueFunction} />}
         <Footer />
       </div>
