@@ -1,0 +1,21 @@
+@import '../../../scss/colors';
+
+.filter__wrapper {
+  background-color: $colorlightgrey;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  padding: 0 30px;
+}
+
+.fa-search {
+  color: $colorblue;
+  transform: rotate(90deg);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+

@@ -1,0 +1,74 @@
+@import '../../scss/colors';
+@import '../../scss/variables';
+
+.question__page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: $defaultfont;
+}
+
+.question__main {
+  padding: 0 25px;
+}
+
+.question__title {
+  color: $colorgrey;
+  margin: 0;
+}
+
+.section__title {
+  color: $colorgrey;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.question__date,
+.question__content {
+  color: $colorgrey;
+  margin: 0;
+}
+
+.title__container,
+.subtitle__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question__author {
+  color: $colorblue;
+  text-transform: capitalize;
+}
+
+.question__user-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.question__content {
+  padding: 30px 70px;
+}
+
+.answer__list,
+.question__tags-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.question__tags-list {
+  display: flex;
+  .question__tag {
+    margin-right: 10px;
+    background-color: $colorblue;
+    color: $colorwhite;
+    padding: 5px 8px;
+    border-radius: 5px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

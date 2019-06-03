@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './styles.scss';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
@@ -7,6 +9,16 @@ import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#4595cb'
+    },
+    secondary: {
+      main: '#777777'
+    }
+  }
+});
 class Form extends Component {
   constructor(props) {
     super(props);
@@ -70,28 +82,30 @@ class Form extends Component {
   }
 
   render() {
-    const { classPaper } = this.props;
+    const { classPaper, classButton } = this.props;
     const {
       error,
       answerToAdd: { answer, author }
     } = this.state;
     return (
-      <Grid item xs={12}>
-        <Paper className={classPaper}>
-          <form noValidate autoComplete="off">
-            <TextField label="Nombre usuario" fullWidth value={author} onChange={this.handleChange('author')} variant="outlined" type="text" margin="normal" error={error.author} />
-            <TextField label="Respuesta" fullWidth value={answer} onChange={this.handleChange('answer')} type="text" variant="outlined" multiline rows="10" margin="normal" error={error.answer} />
-            <div className="buttons__container">
-              <Button variant="contained" className="form__button cancel__answer" onClick={this.resetAnswer}>
-                cancelar
-              </Button>
-              <Button variant="contained" color="primary" className="form__button add__answer" onClick={this.handleAddAnswer} disabled={!answer || !author}>
-                aceptar
-              </Button>
-            </div>
-          </form>
-        </Paper>
-      </Grid>
+      <ThemeProvider theme={theme}>
+        <Grid item xs={12}>
+          <Paper className={classPaper}>
+            <form noValidate autoComplete="off">
+              <TextField label="Nombre usuario" fullWidth value={author} onChange={this.handleChange('author')} variant="outlined" type="text" margin="normal" error={error.author}  helperText={error.author ? 'Por favor rellena este campo' : ''}/>
+              <TextField label="Respuesta" fullWidth value={answer} onChange={this.handleChange('answer')} type="text" variant="outlined" multiline rows="10" margin="normal" error={error.answer} helperText={error.answer ? 'Por favor rellena este campo' : ''}/>
+              <div className="buttons__container">
+                <Button variant="contained" className={classButton} onClick={this.resetAnswer} color="secondary">
+                  cancelar
+                </Button>
+                <Button variant="contained" color="primary" className={classButton} onClick={this.handleAddAnswer} disabled={!answer || !author}>
+                  aceptar
+                </Button>
+              </div>
+            </form>
+          </Paper>
+        </Grid>
+      </ThemeProvider>
     );
   }
 }

@@ -1,15 +1,12 @@
 import './styles.scss';
 import React from 'react';
-import logoStackList  from '../Images/logo-stackList.svg';
+import logoStackList  from '../../images/LOGO_blue.svg';
 
-class Header extends React.Component{
-  render(){
-    return(
+class Header extends React.Component {
+  render() {
+    return (
       <div className="container__header">
-        <img 
-          className="header__stackList" 
-          src={logoStackList}
-          alt="Logotipo de nfq stack"/>
+        <img className="header__stackList" src={logoStackList} alt="Logotipo de nfq stack" />
       </div>
     );
   }

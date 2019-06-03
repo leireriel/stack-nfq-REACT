@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ModalInfo from './ModalInfo';
+import Filter from './Filter/index';
 import Question from './Question/index';
 import Footer from '../Footer/index';
 import FloatingActionButtons from './Button/index';
@@ -28,18 +29,21 @@ class StackList extends Component {
     const { dataQuestion, createNewQuestion } = this.props;
     const { isOpen } = this.state;
     return (
-      <div>
+      <div className="container__stacklist">
         <Header />
-        <ul className="list">
-          {dataQuestion.map(item => {
-            return (
-              <li className="question__item" key={item.id}>
-                <Question item={item} />
-              </li>
-            );
-          })}
-        </ul>
-        <FloatingActionButtons dialogueFunction={this.dialogueFunction} />
+        <main>
+          <Filter />
+          <ul className="list">
+            {dataQuestion.map(item => {
+              return (
+                <li className="question__item" key={item.id}>
+                  <Question item={item} />
+                </li>
+              );
+            })}
+          </ul>
+          <FloatingActionButtons dialogueFunction={this.dialogueFunction} />
+        </main>
         {isOpen && <ModalInfo dialogueFunction={this.dialogueFunction} createNewQuestion={createNewQuestion} arrLength={dataQuestion.length} />}
         <Footer />
       </div>
