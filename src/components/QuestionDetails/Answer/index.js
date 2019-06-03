@@ -11,21 +11,23 @@ class Answer extends React.Component{
     this.state={
       likes: parseInt(answers.likes)
     }
-    this.updateLike=this.updateLike.bind(this);
+    this.moreLike=this.moreLike.bind(this);
   }
 
-  updateLike(){
-    const {answers} =this.props;
-    const likes = parseInt(answers.likes);
+  moreLike(){
+    const {answers, questionItem, index, updateQuestion} =this.props;
+    let likes = parseInt(answers.likes);
       this.setState((prevState, props) => {
-        let newLikes = {...likes};
-        newLikes = likes + 1;
+        let newLikes = {...questionItem.answers[index].likes};
+        newLikes = likes + 1 ;
         console.log(newLikes)
-        return{
-          likes: newLikes
-        }
+        return(
+          answers.likes = newLikes
+        )
+        
       })
   }
+  
 
   render(){
     const { classPaper, answers } = this.props;
@@ -34,8 +36,8 @@ class Answer extends React.Component{
         <Paper className={classPaper}>
           <div className="answer__heart">
             <i className="fas fa-heart"
-             onClick={this.updateLike}>
-            {this.state.likes}
+             onClick={this.moreLike}>
+            {answers.likes}
             </i>
           </div>
           <h3 className="answer__text">{answers.answer}</h3>

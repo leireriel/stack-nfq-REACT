@@ -90,7 +90,7 @@ const QuestionDetails = ({ dataQuestion, id, classes, updateQuestion }) => {
                 {questionItem.answers.map((answers, index) => {
                   return (
                     <li key={index} className="question__answer">
-                      <Answer answers={answers} classPaper={classes.paper} />
+                      <Answer answers={answers} index={index} classPaper={classes.paper} questionItem={questionItem} updateQuestion={updateQuestion} />
                     </li>
                   );
                 })}

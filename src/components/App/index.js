@@ -17,6 +17,7 @@ class App extends Component {
     this.getQuestion = this.getQuestion.bind(this);
     this.updateQuestionAnswer = this.updateQuestionAnswer.bind(this);
   }
+  
   componentDidMount() {
     this.getQuestion();
   }
