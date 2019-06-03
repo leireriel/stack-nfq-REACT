@@ -122,7 +122,7 @@ class ModalInfo extends Component {
 }
 
 ModalInfo.propTypes = {
-  arrLength: PropTypes.array,
+  arrLength: PropTypes.arrayOf(PropTypes.number),
   createNewQuestion: PropTypes.func,
   dialogueFunction: PropTypes.func
 };
