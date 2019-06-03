@@ -118,7 +118,9 @@ QuestionDetails.propTypes = {
   dataQuestion: PropTypes.arrayOf(PropTypes.object),
   id: PropTypes.string,
   classes: PropTypes.object.isRequired,
-  updateQuestion: PropTypes.func
+  updateQuestion: PropTypes.func,
+  answers: PropTypes.object,
+  questionItem: PropTypes.object
 };
 
 export default withStyles(styles)(QuestionDetails);

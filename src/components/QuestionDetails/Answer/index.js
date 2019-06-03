@@ -7,10 +7,6 @@ import PropTypes from 'prop-types';
 class Answer extends React.Component{
   constructor(props){
     super(props);
-    const {answers} =this.props;
-    this.state={
-      likes: parseInt(answers.likes)
-    }
     this.moreLike=this.moreLike.bind(this);
   }
 
@@ -43,9 +39,12 @@ class Answer extends React.Component{
     );
   }
 }
-export default Answer;
 
 Answer.propTypes = {
   classPaper: PropTypes.string.isRequired,
-  answer: PropTypes.object
+  answers: PropTypes.object,
+  questionItem: PropTypes.object,
+  updateQuestion: PropTypes.func
 };
+
+export default Answer;
