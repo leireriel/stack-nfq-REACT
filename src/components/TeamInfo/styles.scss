@@ -1,0 +1,46 @@
+@import '../../scss/colors';
+@import '../../scss/variables';
+
+.team__page {
+  min-height: 100vh;
+  font-family: $defaultfont;
+  display: flex;
+  flex-direction: column;
+  .team__main {
+    width: 100vw;
+    background-color: $colororange;
+    flex-grow: 1;
+    text-align: center;
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.about__title {
+  color: $colorwhite;
+  font-size: 50px;
+  text-align: center;
+  text-shadow: 2px 2px 2px $colorgrey;
+  text-transform: uppercase;
+}
+
+.member__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 40px;
+}
+
+.member__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

@@ -1,0 +1,47 @@
+@import '../../../scss/colors';
+
+.member__name {
+  margin: 10px 0;
+}
+
+.app__info {
+  color: $colorblack;
+  max-width: 800px;
+  margin: 0 auto 70px;
+  font-size: 30px;
+}
+.member__image {
+  height: 200px;
+  border-radius: 50%;
+}
+
+.member__image--container {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: 0 0 7px 3px $colorwhite;
+  margin-bottom: 10px;
+}
+
+.member__bio,
+.member__role {
+  color: $colorwhite;
+  margin: 0;
+}
+
+.member__linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.member__linkItem {
+  display: inline-block;
+  margin: 10px;
+}
+
+.social_media_link {
+  text-decoration: none;
+  color: $colorblack;
+  font-size: 20px;
+}

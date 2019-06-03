@@ -9,16 +9,19 @@ export default function TeamInfo() {
   return (
     <div className="team__page">
       <Header />
-      <div className="wrapper">
-        <h1 className="about__title">Team</h1>
-        <ul className="member__list">
-          {dataMembers.map((member, index) => (
-            <li className="member__item" key={index}>
-              <Member member={member} />
-            </li>
-          ))}
-        </ul>
-      </div>
+      <main className="team__main">
+        <div className="wrapper">
+          <h1 className="about__title">Team</h1>
+          <p className="app__info">Stack NFQ - una aplicación web donde los desarrolladores de la empresa pueden encontrar soluciones a problemas de programación de diferentes lenguajes, así como plantear posibles dudas para que sean resueltas por sus compañeros.</p>
+          <ul className="member__list">
+            {dataMembers.map((member, index) => (
+              <li className="member__item" key={index}>
+                <Member member={member} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </main>
       <Footer />
     </div>
   );

@@ -23,7 +23,7 @@ const findClassIcon = iconName => {
   return classForIcon;
 };
 
-export default function Member({ member: { name, bio, links, img } }) {
+export default function Member({ member: { name, bio, links, img, role } }) {
   return (
     <Fragment>
       <div className="member__image--container">
@@ -31,7 +31,17 @@ export default function Member({ member: { name, bio, links, img } }) {
       </div>
       <div className="member__content">
         <h2 className="member__name">{name}</h2>
-        <p className="member__bio">{bio}</p>
+        <p className="member__role">{role}</p>
+        {/* <p className="member__bio">{bio}</p>
+        <ul className="member__linkList">
+          {links.map((link, index) => (
+            <li className="member__linkItem" key={index}>
+              <a href={link.src} className="social_media_link" target="_blank" rel="noopener noreferrer">
+                <i className={findClassIcon(link.name)} />
+              </a>
+            </li>
+          ))}
+        </ul> */}
         <ul className="member__linkList">
           {links.map((link, index) => (
             <li className="member__linkItem" key={index}>
