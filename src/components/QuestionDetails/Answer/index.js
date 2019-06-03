@@ -17,7 +17,7 @@ class Answer extends React.Component{
   moreLike(){
     const {answers, questionItem, index, updateQuestion} =this.props;
     let likes = parseInt(answers.likes);
-      this.setState((prevState, props) => {
+      this.setState(() => {
         answers.likes ++ ;
         updateQuestion(questionItem);
       }
