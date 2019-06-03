@@ -11,12 +11,18 @@ class ModalInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: {
+      createQuestion: {
         name: '',
         tags: '',
         title: '',
         details: ''
-      } 
+      },
+      error : {
+        name: false,
+        tags: false,
+        title: false,
+        details: false
+      }
     };
     
     this.handleChange = this.handleChange.bind(this);
@@ -25,13 +31,14 @@ class ModalInfo extends Component {
   handleChange = inputInfo => event => {
     const inputValue = event.target.value;
     this.setState(prevState => {
-      const newError = { ...prevState.error, [inputInfo] : inputValue};
-      return { error: newError };
+      const newQuestion = { ...prevState.createQuestion, [inputInfo] : inputValue};
+      const newError = { ...prevState.error, [inputInfo]: inputValue ? false : true };
+      return { error : newError, createQuestion : newQuestion };
     });
   };
 
   render() {
-    const { name, tags, title, details } = this.state;
+    const { createQuestion, error } = this.state;
     const { dialogueFunction } = this.props;
     return (
       <Dialog open={true} aria-labelledby="form-dialog-title">
@@ -39,31 +46,31 @@ class ModalInfo extends Component {
         <DialogContent>
           <TextField
             onChange={this.handleChange('name')}
-            value={name}
+            value={createQuestion.name}
             required
-            id="outlined-required"
             label="Nombre Usuario"
+            error={error.name}
           />
           <TextField
             onChange={this.handleChange('tags')}
-            value={tags}
+            value={createQuestion.tags}
             required
-            id="outlined-required"
             label="Tags"
+            error={error.tags}
           />
           <TextField
             onChange={this.handleChange('title')}
-            value={title}
+            value={createQuestion.title}
             required
-            id="outlined-required"
             label="Titulo Pregunta"
+            error={error.title}
           />
           <TextField
             onChange={this.handleChange('details')}
-            value={details}
+            value={createQuestion.details}
             required
-            id="outlined-required"
             label="Detalle Pregunta"
+            error={error.details}
           />
         </DialogContent>
         <DialogActions>
