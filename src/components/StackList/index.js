@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import ModalInfo from './ModalInfo';
 import Filter from './Filter/index';
 import Question from './Question/index';
