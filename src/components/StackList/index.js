@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ModalInfo from './ModalInfo';
+import Filter from './Filter/index';
 import Question from './Question/index';
 import Footer from '../Footer/index';
 import FloatingActionButtons from './Button/index';
@@ -31,6 +32,7 @@ class StackList extends Component {
       <div className="container__stacklist">
         <Header />
         <main>
+          <Filter />
           <ul className="list">
             {dataQuestion.map(item => {
               return (
