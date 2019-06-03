@@ -6,6 +6,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import moment from 'moment';
 
 class ModalInfo extends Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class ModalInfo extends Component {
     };
     
     this.handleChange = this.handleChange.bind(this);
+    this.sendQuestion = this.sendQuestion.bind(this);
   }
 
   handleChange = inputInfo => event => {
@@ -37,9 +39,31 @@ class ModalInfo extends Component {
     });
   };
 
+  sendQuestion() {
+    const newQuestion = {
+      ...this.state.createQuestion, answers : [], date: moment().format('YYYY-MM-DDTHH:MM:SS'), id: this.props.arrLength + 1
+    }
+    this.props.createNewQuestion(newQuestion);
+    this.setState( {
+        createQuestion: {
+          name: '',
+          tags: '',
+          title: '',
+          details: ''
+        },
+        error : {
+          name: false,
+          tags: false,
+          title: false,
+          details: false
+        }
+      })
+    this.props.dialogueFunction();
+  } 
+
   render() {
     const { createQuestion: {name, tags, title, details}, error } = this.state;
-    const { dialogueFunction } = this.props;
+    const { dialogueFunction, createNewQuestion } = this.props;
     return (
       <Dialog open={true} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Añade una nueva pregunta</DialogTitle>
@@ -87,7 +111,7 @@ class ModalInfo extends Component {
           <Button color="primary" onClick={dialogueFunction}>
             Cancelar
           </Button>
-          <Button color="primary" disabled={!name || !tags || !title || !details}>
+          <Button color="primary" disabled={!name || !tags || !title || !details} onClick={this.sendQuestion}>
             Aceptar
           </Button>
         </DialogActions>
