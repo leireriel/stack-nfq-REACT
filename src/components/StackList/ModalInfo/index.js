@@ -38,7 +38,7 @@ class ModalInfo extends Component {
   };
 
   render() {
-    const { createQuestion, error } = this.state;
+    const { createQuestion: {name, tags, title, details}, error } = this.state;
     const { dialogueFunction } = this.props;
     return (
       <Dialog open={true} aria-labelledby="form-dialog-title">
@@ -46,38 +46,48 @@ class ModalInfo extends Component {
         <DialogContent>
           <TextField
             onChange={this.handleChange('name')}
-            value={createQuestion.name}
+            value={name}
             required
             label="Nombre Usuario"
             error={error.name}
+            helperText={error.name ? 'Por favor, rellena este campo' : ''}
+            fullWidth
           />
           <TextField
             onChange={this.handleChange('tags')}
-            value={createQuestion.tags}
+            value={tags}
             required
             label="Tags"
             error={error.tags}
+            helperText={error.tags ? 'Por favor, rellena este campo' : ''}
+            fullWidth
           />
           <TextField
             onChange={this.handleChange('title')}
-            value={createQuestion.title}
+            value={title}
             required
             label="Titulo Pregunta"
             error={error.title}
+            helperText={error.title ? 'Por favor, rellena este campo' : ''}
+            fullWidth
           />
           <TextField
             onChange={this.handleChange('details')}
-            value={createQuestion.details}
+            value={details}
             required
             label="Detalle Pregunta"
             error={error.details}
+            helperText={error.details ? 'Por favor, rellena este campo' : ''}
+            fullWidth
+            multiline
+            rows='10'
           />
         </DialogContent>
         <DialogActions>
           <Button color="primary" onClick={dialogueFunction}>
             Cancelar
           </Button>
-          <Button color="primary">
+          <Button color="primary" disabled={!name || !tags || !title || !details}>
             Aceptar
           </Button>
         </DialogActions>
