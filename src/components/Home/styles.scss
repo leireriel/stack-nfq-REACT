@@ -45,6 +45,21 @@ body{
   text-align: center;
 }
 
+.info__btn {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 25px;
+  right: 28px;
+  background: transparent;
+  color: $colorwhite;
+  border: 2px solid $colorwhite;
+  border-radius: 50%;
+  font-family: $defaultfont;
+  font-size: 18px;
+  cursor: pointer;
+}
+
 .home__btn{
   font-family: $defaultfont;
   font-size: 33px;

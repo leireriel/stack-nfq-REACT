@@ -19,6 +19,7 @@ class App extends Component {
     this.createNewQuestion = this.createNewQuestion.bind(this);
     this.updateQuestionAnswer = this.updateQuestionAnswer.bind(this);
   }
+  
   componentDidMount() {
     this.getQuestion();
   }

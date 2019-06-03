@@ -3,45 +3,58 @@
 
 .team__page {
   min-height: 100vh;
-  font-family: $defaultfont;
+  font-family: $teamtfont;
   display: flex;
   flex-direction: column;
   .team__main {
     width: 100vw;
-    background-color: gainsboro;
-    // background-color: rgba(232, 66, 74, 0.7);
+    background-color: $colorgreyteam;
     flex-grow: 1;
     text-align: center;
+    display: flex;
+    flex-direction: column;
     .wrapper {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      flex-grow: 1;
     }
   }
-}
-
-.about__title {
-  color: $colorlightblue;
-  font-size: 50px;
-  text-align: center;
-  text-shadow: 2px 2px 2px $colorgrey;
-  text-transform: uppercase;
+  .container__header {
+    padding: 0;
+    height: 200px;
+    background-color: $colorgreyteam;
+  }
 }
 
 .member__list {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 40px;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: flex-start;
+  flex-grow: 1;
+  padding: 0 0 20px;
 }
 
 .member__item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 200px;
+  margin: 0 20px;
+  &:nth-child(odd) {
+    align-self: flex-end;
+  }
+}
+
+.app__info {
+  color: $colorblack;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  font-size: 22px;
+  line-height: 30px;
 }
