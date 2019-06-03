@@ -7,6 +7,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 class ModalInfo extends Component {
   constructor(props) {
@@ -63,7 +64,7 @@ class ModalInfo extends Component {
 
   render() {
     const { createQuestion: {name, tags, title, details}, error } = this.state;
-    const { dialogueFunction, createNewQuestion } = this.props;
+    const { dialogueFunction } = this.props;
     return (
       <Dialog open={true} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Añade una nueva pregunta</DialogTitle>
@@ -120,6 +121,10 @@ class ModalInfo extends Component {
   }
 }
 
-// Modal.propTypes = {};
+ModalInfo.propTypes = {
+  arrLength: PropTypes.array,
+  createNewQuestion: PropTypes.func,
+  dialogueFunction: PropTypes.func
+};
 
 export default ModalInfo;
