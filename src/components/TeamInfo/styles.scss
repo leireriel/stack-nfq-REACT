@@ -8,7 +8,8 @@
   flex-direction: column;
   .team__main {
     width: 100vw;
-    background-color: $colororange;
+    background-color: gainsboro;
+    // background-color: rgba(232, 66, 74, 0.7);
     flex-grow: 1;
     text-align: center;
     .wrapper {
@@ -23,7 +24,7 @@
 }
 
 .about__title {
-  color: $colorwhite;
+  color: $colorlightblue;
   font-size: 50px;
   text-align: center;
   text-shadow: 2px 2px 2px $colorgrey;
