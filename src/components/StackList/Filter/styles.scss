@@ -4,22 +4,18 @@
   background-color: $colorlightgrey;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   height: 80px;
   padding: 0 30px;
 }
+
 .fa-search {
   color: $colorblue;
   transform: rotate(90deg);
-  margin-right: 10px;
-}
-#searchQuestion {
-  background-color: $colorlightgrey;
-  border: none;
   display: flex;
-  flex-grow: 1;
-  width: 100%;
-  height: 20px;
-  border-bottom: 1px solid $colorgrey;
+  justify-content: center;
+  margin-bottom: 8px;
 }
+
 
