@@ -7,10 +7,10 @@ class Question extends React.Component {
   render() {
     const { item } = this.props;
     return (
-      <Link to={`question/${item.id}`}>
+      <Link className="link__question--wrapper" to={`question/${item.id}`}>
         <div className="wrapper__question">
           <div className="container__question">
-            <h2 className="question__title">{item.question}</h2>
+            <h2 className="question__title" >{item.question}</h2>
             <h3 className="question__chips">{item.tags}</h3>
           </div>
           <div className="container__author">
