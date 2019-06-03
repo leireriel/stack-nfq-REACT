@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import ModalInfo from './ModalInfo';
 import Filter from './Filter/index';
 import Question from './Question/index';
@@ -33,7 +33,7 @@ class StackList extends Component {
         <Header />
         <main>
           <Filter />
-          <ul className="list">
+          <ul className="question__list">
             {dataQuestion.map(item => {
               return (
                 <li className="question__item" key={item.id}>

@@ -1,7 +1,23 @@
+@import '../../scss/variables';
 @import '../../scss/colors';
+
+body {
+  font-family: $defaultfont;
+}
 
 .container__stacklist{
   .container__footer{
     border-top: 1px solid $colorborder;
   }
+}
+
+.question__list {
+  border: 0;
+  padding: 11px 0 0 0;
+}
+
+.question__item {
+  list-style: none;
+  margin: 20px 39px;
+  border: 1px solid $colorgrey;
 }
