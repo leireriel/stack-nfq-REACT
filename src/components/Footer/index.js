@@ -6,7 +6,7 @@ import logoAdalab from '../../images/logo-adalab.svg';
 class Footer extends React.Component {
   render() {
     return (
-      <div className="container__footer">
+      <footer className="container__footer">
         <a href="https://nfq.es/" target="_blank" rel="noopener noreferrer">
           <img className="footer__nfq" src={logoNFQ} alt="Logo de nfq" />
         </a>
@@ -14,7 +14,7 @@ class Footer extends React.Component {
         <a href="https://adalab.es/" target="_blank" rel="noopener noreferrer">
           <img className="footer__adalab" src={logoAdalab} alt="Logo de Adalab" />
         </a>
-      </div>
+      </footer>
     );
   }
 }
