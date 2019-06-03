@@ -15,15 +15,23 @@ body{
 }
 
 .container__header--home {
-  
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   background-color: $colorlightblue;
+  text-align: center;
+  width: 100%;
+  min-height: 300px;
 
 }
 .header__home {
-  
-  margin-top: 345px;
-
-
+   width: 372px;
+  //  height: 85px;
+  //  background-image: url('../Images/logo-headerHome.svg');
+  //  background-size: cover;
+  //  background-position: center center;
+  //  background-repeat: no-repeat;
+   
 }
 
 .home__main{
@@ -31,7 +39,7 @@ body{
   flex-direction: column;
   flex-grow: 1;
   background-color: $colorlightblue;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
 }
 
@@ -39,7 +47,7 @@ body{
   font-family: $defaultfont;
   font-size: 30px;
   color: $colorwhite;
-  margin: 60px 30px;
+  margin: 60px 30px 60px;
   text-align: center;
 }
 
