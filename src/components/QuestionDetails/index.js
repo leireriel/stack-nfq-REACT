@@ -8,10 +8,13 @@ import Avatar from '@material-ui/core/Avatar';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Form from './Form';
 import Answer from './Answer';
-import Header from './Header';
+import Header from '../Header';
 import Footer from '../Footer';
 import avatarImg from '../../images/avatar.png';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
+import arrowIcon from '../../images/back-arrow.png';
+import Button from '@material-ui/core/Button';
 
 const theme = createMuiTheme({
   palette: {
@@ -26,7 +29,7 @@ const styles = theme => ({
     flexGrow: 1
   },
   paper: {
-    padding: '20px 30px'
+    padding: '27px 25px 37px'
   },
   paperForm: {
     backgroundColor: '#E8E8E8',
@@ -44,6 +47,11 @@ const styles = theme => ({
     margin: '10px 0 10px 10px',
     width: 60,
     height: 60
+  },
+  headerButton: {
+    textTransform: 'capitalize',
+    padding: '7px 11px',
+    fontSize: 12
   }
 });
 
@@ -59,7 +67,14 @@ const QuestionDetails = ({ dataQuestion, id, classes, updateQuestion }) => {
     <div className="question__page">
       {questionItem ? (
         <ThemeProvider theme={theme}>
-          <Header />
+          <Header>
+            <Link to="/questions" className="header__button-link">
+              <Button variant="outlined" color="primary" className={classes.headerButton}>
+                <img src={arrowIcon} alt="back arrow link" className="header__link-image" />
+                Volver atrás
+              </Button>
+            </Link>
+          </Header>
           <main className={`question__main ${classes.root}`}>
             <section className="question__section">
               <Paper className={classes.paper}>

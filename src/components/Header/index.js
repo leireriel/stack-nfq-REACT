@@ -7,7 +7,8 @@ class Header extends React.Component {
   render() {
     return (
       <div className="container__header">
-        <Link to="home">
+        {this.props.children}
+        <Link to="/home" className="header__link-logo">
           <img className="header__stackList" src={logoStackList} alt="Logotipo de nfq stack" />
         </Link>
       </div>
