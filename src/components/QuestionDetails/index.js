@@ -87,10 +87,10 @@ const QuestionDetails = ({ dataQuestion, id, classes, updateQuestion }) => {
             <section className="answer__section">
               <h2 className="section__title">{questionItem.answers.length} respuestas</h2>
               <ul className="answer__list">
-                {questionItem.answers.map((answer, index) => {
+                {questionItem.answers.map((answers, index) => {
                   return (
                     <li key={index} className="question__answer">
-                      <Answer answer={answer} classPaper={classes.paper} />
+                      <Answer answers={answers} classPaper={classes.paper} />
                     </li>
                   );
                 })}
