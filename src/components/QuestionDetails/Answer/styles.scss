@@ -1,8 +1,5 @@
 @import '../../../scss/colors';
-<<<<<<< HEAD
 @import '../../../scss/variables';
-=======
->>>>>>> final-touches
 
 .MuiPaper-root.MuiPaper-elevation1.QuestionDetails-paperAnswer-7.MuiPaper-rounded {
   display: flex;
@@ -40,15 +37,11 @@
 .container__user {
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
   align-items: center;
+  color: $colorgrey;
   @media all and (min-width: $bptablet){
     align-items: flex-end;
   }
-=======
-  align-items: flex-end;
-  color: $colorgrey;
->>>>>>> final-touches
 }
 
 .container__face {
@@ -66,13 +59,8 @@
   height: auto;
 }
 
-<<<<<<< HEAD
 .answer__date {
-  margin: 0px;
+  margin: 0;
   padding: 0 10px;
   color: $colorgrey;
-=======
-.answer__date  {
-  margin: 0;
->>>>>>> final-touches
 }
