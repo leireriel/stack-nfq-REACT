@@ -13,13 +13,15 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataQuestion: []
+      dataQuestion: [],
+      searchWord: ''
     };
     this.getQuestion = this.getQuestion.bind(this);
     this.createNewQuestion = this.createNewQuestion.bind(this);
     this.updateQuestionAnswer = this.updateQuestionAnswer.bind(this);
+    this.handleInputValue = this.handleInputValue.bind(this);
   }
-  
+
   componentDidMount() {
     this.getQuestion();
   }
@@ -51,12 +53,19 @@ class App extends Component {
       .catch(error => console.error('Error:', error));
   }
 
+  handleInputValue(event) {
+    const searchWord = event.currentTarget.value;
+    this.setState({
+      searchWord: searchWord
+    });
+  }
+
   render() {
-    const { dataQuestion } = this.state;
+    const { dataQuestion, searchWord } = this.state;
     return (
       <Switch>
         <Route exact path="/home" render={() => <Home />} />
-        <Route exact path="/questions" render={() => <StackList dataQuestion={dataQuestion} createNewQuestion={this.createNewQuestion} />} />
+        <Route exact path="/questions" render={() => <StackList dataQuestion={dataQuestion} handleInputValue={this.handleInputValue} searchWord={searchWord} createNewQuestion={this.createNewQuestion} />} />
         <Route exact path="/question/:id" render={routeProps => <QuestionDetails id={routeProps.match.params.id} dataQuestion={dataQuestion} updateQuestion={this.updateQuestionAnswer} />} />
         <Route exact path="/team" render={() => <TeamInfo />} />
         <Redirect from="/" to="/home" />
