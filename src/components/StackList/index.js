@@ -7,6 +7,7 @@ import FloatingActionButtons from './Button/index';
 import PropTypes from 'prop-types';
 import './styles.scss';
 import Header from '../Header/index';
+import _ from 'lodash';
 
 class StackList extends Component {
   constructor(props) {
@@ -34,7 +35,8 @@ class StackList extends Component {
         <main>
           <Filter />
           <ul className="list">
-            {dataQuestion.map(item => {
+          {_.sortBy(dataQuestion, 'date').reverse()
+            .map(item => {
               return (
                 <li className="question__item" key={item.id}>
                   <Question item={item} />
