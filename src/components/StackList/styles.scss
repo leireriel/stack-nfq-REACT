@@ -5,6 +5,10 @@ body {
   font-family: $defaultfont;
 }
 
+.container__stackList {
+  position: relative;
+}
+
 .question__list {
   border: 0;
   padding: 0;

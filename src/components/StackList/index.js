@@ -7,15 +7,12 @@ import FloatingActionButtons from './Button/index';
 import PropTypes from 'prop-types';
 import './styles.scss';
 import Header from '../Header/index';
-
 class StackList extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       isOpen: false
     };
-
     this.dialogueFunction = this.dialogueFunction.bind(this);
   }
 
