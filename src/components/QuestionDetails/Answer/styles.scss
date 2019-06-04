@@ -1,0 +1,12 @@
+@import '../../../scss/colors';
+
+.answer__heart {
+  width: 30px;
+  height: 30px;
+  color: $colorbordo;
+  opacity: 0.85;
+  &:hover{
+    cursor: pointer;
+    opacity: 1;
+  }
+}

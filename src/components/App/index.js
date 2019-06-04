@@ -82,7 +82,7 @@ class App extends Component {
               dataQuestion={dataQuestion}
               updateQuestion={this.updateQuestionAnswer}
             />} />
-        {/* <Route exact path="/card" render={() => <TeamInfo />} /> */}
+        <Route exact path="/card" render={() => <TeamInfo />} />
         <Redirect from="/" to="/home" />
       </Switch>
     );
