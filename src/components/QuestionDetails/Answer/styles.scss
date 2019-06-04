@@ -1,4 +1,7 @@
-.fa-heart {
-  font-size: 30px;
-  color: red;
+@import '../../../scss/colors';
+
+.answer__heart {
+  width: 30px;
+  height: 30px;
+  color: $colorred;
 }

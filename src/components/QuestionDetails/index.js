@@ -61,10 +61,20 @@ const formatDate = dateToFormat => {
   return `Formulada el día ${dateArr[0]} a las ${dateArr[1]}`;
 };
 
-const QuestionDetails = ({ dataQuestion, id, classes, updateQuestion }) => {
+class QuestionDetails extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+  
+  render(){
+  const { dataQuestion, id, classes, updateQuestion} = this.props;
   const questionItem = dataQuestion.find(question => question.id === parseInt(id));
-  return (
-    <div className="question__page">
+    return(
+      <div className="question__page">
       {questionItem ? (
         <ThemeProvider theme={theme}>
           <Header>
@@ -126,8 +136,10 @@ const QuestionDetails = ({ dataQuestion, id, classes, updateQuestion }) => {
       )}
       <Footer />
     </div>
-  );
-};
+    );
+  }
+}
+
 
 QuestionDetails.propTypes = {
   dataQuestion: PropTypes.arrayOf(PropTypes.object),
