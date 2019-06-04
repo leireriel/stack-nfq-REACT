@@ -1,7 +1,21 @@
+@import '../../scss/variables';
 @import '../../scss/colors';
 
-.container__stacklist{
-  .container__footer{
-    border-top: 1px solid $colorborder;
+.container__stacklist {
+  position: relative;
+  .container__footer {
+    margin-top: 40px;
   }
+}
+
+.question__list {
+  border: 0;
+  padding: 0;
+  margin: 40px 0 0 0;
+}
+
+.question__item {
+  list-style: none;
+  margin: 20px 40px;
+  border: 1px solid $colorlightgrey;
 }

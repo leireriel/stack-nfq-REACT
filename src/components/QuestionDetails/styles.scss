@@ -9,66 +9,29 @@
   font-family: $defaultfont;
 }
 
-.question__main {
-  padding: 0 39px;
+.header__button-link {
+  text-decoration: none;
 }
 
-.question__title {
-  color: $colorgrey;
-  margin: 0;
+.question__main {
+  padding: 0 39px;
 }
 
 .section__title {
   color: $colorgrey;
   font-weight: normal;
   font-size: 20px;
+  margin: 65px 0 23px;
 }
 
-.question__date,
 .question__content {
   color: $colorgrey;
   margin: 0;
+  padding: 50px 80px;
 }
 
-.title__container,
-.subtitle__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.question__author {
-  color: $colorblue;
-  text-transform: capitalize;
-}
-
-.question__user-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.question__content {
-  padding: 30px 70px;
-}
-
-.answer__list,
-.question__tags-list {
+.answer__list {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.question__tags-list {
-  display: flex;
-  .question__tag {
-    margin-right: 10px;
-    background-color: $colorblue;
-    color: $colorwhite;
-    padding: 5px 8px;
-    border-radius: 5px;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
 }

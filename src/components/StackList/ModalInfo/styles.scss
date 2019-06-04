@@ -1,0 +1,30 @@
+@import '../../../scss/colors';
+@import '../../../scss/variables';
+
+
+.dialog__title {
+  color: $colorblue;
+  text-align: center;
+}
+
+.MuiTypography-root.MuiTypography-h6 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.MuiDialogActions-root.MuiDialogActions-spacing {
+  justify-content: center;
+  padding: 0;
+}
+
+.MuiButtonBase-root.MuiButton-root.cancel__btn {
+  margin: 20px;
+  width: 150px;
+  height: 40px;
+}
+
+.MuiButtonBase-root.MuiButton-root.accept__btn {
+  margin: 20px;
+  width: 150px;
+  height: 40px;
+}
