@@ -65,30 +65,9 @@ class App extends Component {
     return (
       <Switch>
         <Route exact path="/home" render={() => <Home />} />
-<<<<<<< HEAD
-        <Route
-          exact path="/questions"
-          render={() =>
-            <StackList
-              dataQuestion={dataQuestion}
-              handleInputValue={this.handleInputValue}
-              searchWord={searchWord}
-            />}
-        />
-        <Route
-          exact path="/question/:id"
-          render={routeProps =>
-            <QuestionDetails
-              id={routeProps.match.params.id}
-              dataQuestion={dataQuestion}
-              updateQuestion={this.updateQuestionAnswer}
-            />} />
-        <Route exact path="/card" render={() => <TeamInfo />} />
-=======
         <Route exact path="/questions" render={() => <StackList dataQuestion={dataQuestion} handleInputValue={this.handleInputValue} searchWord={searchWord} createNewQuestion={this.createNewQuestion} />} />
         <Route exact path="/question/:id" render={routeProps => <QuestionDetails id={routeProps.match.params.id} dataQuestion={dataQuestion} updateQuestion={this.updateQuestionAnswer} />} />
         <Route exact path="/team" render={() => <TeamInfo />} />
->>>>>>> dev
         <Redirect from="/" to="/home" />
       </Switch>
     );
