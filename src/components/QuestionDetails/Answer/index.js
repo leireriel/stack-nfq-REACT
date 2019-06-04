@@ -7,15 +7,12 @@ import Favorite from '@material-ui/icons/Favorite';
 import PropTypes from 'prop-types';
 import Avatar from '@material-ui/core/Avatar';
 import avatarImg from '../../../images/avatar.png';
-import moment from 'moment';
-
-
+import { formatDate } from '../../../data/commonFunctions';
 
 class Answer extends React.Component{
   constructor(props){
     super(props);
     this.moreLike=this.moreLike.bind(this);
-    this.formatDate=this.formatDate.bind(this);
   }
 
   moreLike(){
@@ -25,12 +22,6 @@ class Answer extends React.Component{
         updateQuestion(questionItem);
       }
     )
-  }
-
-  formatDate(dateToFormat) {
-    const dateArr = dateToFormat.split('T');
-    dateArr[0] = moment(dateArr[0]).format('DD/MM/YYYY');
-    return `Formulada el día ${dateArr[0]} a las ${dateArr[1]}`;
   }
 
   render(){
@@ -50,7 +41,7 @@ class Answer extends React.Component{
               <h4 className="answer__author">{answers.author}</h4>
               <Avatar alt="Remy Sharp" src={avatarImg}  className="answer__img"/>
             </div>
-            <h5 className="answer__date">{this.formatDate(answers.date)}</h5>
+            <h5 className="answer__date">{formatDate(answers.date)}</h5>
           </div>
         </Paper>
       </Grid>

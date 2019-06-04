@@ -12,7 +12,6 @@ import { Link } from 'react-router-dom';
 import arrowIcon from '../../images/back-arrow.png';
 import Button from '@material-ui/core/Button';
 import QuestionContent from '../StackList/QuestionContent';
-import moment from 'moment';
 
 const theme = createMuiTheme({
   palette: {
@@ -52,19 +51,10 @@ const styles = theme => ({
   }
 });
 
-const formatDate = dateToFormat => {
-  const dateArr = dateToFormat.split('T');
-  dateArr[0] = moment(dateArr[0]).format('DD/MM/YYYY');
-  return `Formulada el día ${dateArr[0]} a las ${dateArr[1]}`;
-};
-
 class QuestionDetails extends React.Component {
-  constructor(props){
-    super(props);
-  }
   
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
   
   render(){
