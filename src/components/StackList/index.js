@@ -18,6 +18,10 @@ class StackList extends Component {
     this.dialogueFunction = this.dialogueFunction.bind(this);
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+  
   dialogueFunction() {
     this.setState(prevState => {
       return { isOpen: !prevState.isOpen };
@@ -27,14 +31,15 @@ class StackList extends Component {
   render() {
     const { dataQuestion, createNewQuestion, handleInputValue, searchWord } = this.props;
     const { isOpen } = this.state;
-    console.log(dataQuestion);
     return (
       <div className="container__stacklist">
         <Header />
         <main>
           <Filter handleInputValue={handleInputValue} />
           <ul className="question__list">
-            {_.sortBy(dataQuestion, 'date')
+            {_.sortBy(dataQuestion, (question) => {
+              return new Date(question.date);
+            })
               .reverse()
               .filter(question => {
                 return question.question.toLowerCase().includes(searchWord.toLowerCase()) || question.content.toLowerCase().includes(searchWord.toLowerCase()) || question.tags.toLowerCase().includes(searchWord.toLowerCase());

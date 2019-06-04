@@ -10,12 +10,14 @@
   padding: 0 30px;
 }
 
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-1 {
+  text-align: right;
+}
+
 .fa-search {
   color: $colorblue;
   transform: rotate(90deg);
-  display: flex;
-  justify-content: center;
-  margin-bottom: 8px;
+  font-size: 30px;
 }
 
 
