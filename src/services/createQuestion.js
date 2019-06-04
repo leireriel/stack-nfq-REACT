@@ -1,4 +1,4 @@
-const ENDPOINT = 'http://adalab.nfqsolutions.es:3001/questions';
+const ENDPOINT = 'https://adalab.nfqsolutions.es/api/questions';
 
 const createQuestion = question => {
   return fetch(ENDPOINT, {
