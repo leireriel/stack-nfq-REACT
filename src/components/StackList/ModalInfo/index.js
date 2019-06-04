@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles.scss';
-import { withStyles, createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -20,20 +20,6 @@ const theme = createMuiTheme({
       main: '#777777'
     }
   }
-});
-
-const styles = theme => ({
-  modal: {
-    backgroundColor: 'rgba(255, 255, 255, 0.5)',
-  },
-  button: {
-    color: '#fff',
-    textTransform: 'capitalize',
-    fontWeight: 'bold',
-    margin: '0 20px',
-    padding: '10px 50px'
-  },
-  
 });
 
 class ModalInfo extends Component {
@@ -94,10 +80,11 @@ class ModalInfo extends Component {
     const { dialogueFunction } = this.props;
     return (
       <ThemeProvider theme={theme}>
-        <Dialog open={true} aria-labelledby="form-dialog-title" PaperProps={{style: {backgroundColor: '#E8E8E8'}, overlaystyle: {backgroundColor: 'rgba(255, 255, 255, 0.5)'}}} >
+        <Dialog open={true} aria-labelledby="form-dialog-title" >
           <DialogTitle id="form-dialog-title" className="dialog__title" >Añade una nueva pregunta</DialogTitle>
-          <DialogContent>
+          <DialogContent >
             <TextField
+              margin="normal"
               onChange={this.handleChange('author')}
               value={author}
               required
@@ -107,15 +94,17 @@ class ModalInfo extends Component {
               fullWidth
             />
             <TextField
+              margin="normal"
               onChange={this.handleChange('tags')}
               value={tags}
               required
               label="Tags"
               error={error.tags}
-              helperText={error.tags ? 'Por favor, rellena este campo' : ''}
+              helperText={error.tags ? 'Por favor, rellena este campo' : 'Introduce las etiquetas separadas por comas'}
               fullWidth
             />
             <TextField
+              margin="normal"
               onChange={this.handleChange('question')}
               value={question}
               required
@@ -125,6 +114,7 @@ class ModalInfo extends Component {
               fullWidth
             />
             <TextField
+              margin="normal"
               onChange={this.handleChange('content')}
               value={content}
               required
@@ -133,14 +123,14 @@ class ModalInfo extends Component {
               helperText={error.content ? 'Por favor, rellena este campo' : ''}
               fullWidth
               multiline
-              rows='10'
+              rows='7'
             />
           </DialogContent>
           <DialogActions>
-            <Button color="primary" onClick={dialogueFunction}>
+            <Button variant="contained" className="cancel__btn" color="secondary" onClick={dialogueFunction}>
               Cancelar
           </Button>
-            <Button color="primary" disabled={!question || !content || !tags || !author} onClick={this.sendQuestion}>
+            <Button variant="contained" className="accept__btn" color="primary" disabled={!question || !content || !tags || !author} onClick={this.sendQuestion}>
               Aceptar
           </Button>
           </DialogActions>
@@ -156,4 +146,4 @@ ModalInfo.propTypes = {
   dialogueFunction: PropTypes.func
 };
 
-export default withStyles(styles)(ModalInfo);
+export default ModalInfo;
