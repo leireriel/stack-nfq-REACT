@@ -7,6 +7,10 @@
   text-align: center;
 }
 
+.MuiFormLabel-root.Mui-focused {
+  color: $colorblue !important;
+}
+
 .MuiTypography-root.MuiTypography-h6 {
   font-size: 25px;
   font-weight: bold;

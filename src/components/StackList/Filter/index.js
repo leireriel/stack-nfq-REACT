@@ -9,7 +9,8 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1),
     width: "100%"
   },
-}));
+})
+);
 
 function Filter({handleInputValue}) {
   const classes = useStyles();
@@ -25,6 +26,7 @@ function Filter({handleInputValue}) {
               <TextField
                 type="text"
                 label="Buscar..."
+                variant="outlined"
                 onChange={handleInputValue}
                 fullWidth />
             </Grid>
