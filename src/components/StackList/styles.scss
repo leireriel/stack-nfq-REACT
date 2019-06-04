@@ -1,12 +1,11 @@
 @import '../../scss/variables';
 @import '../../scss/colors';
 
-body {
-  font-family: $defaultfont;
-}
-
-.container__stackList {
+.container__stacklist {
   position: relative;
+  .container__footer {
+    margin-top: 40px;
+  }
 }
 
 .question__list {

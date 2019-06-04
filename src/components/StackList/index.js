@@ -49,6 +49,7 @@ class StackList extends Component {
 }
 
 StackList.propTypes = {
-  dataQuestion: PropTypes.arrayOf(PropTypes.object)
+  dataQuestion: PropTypes.arrayOf(PropTypes.object),
+  createNewQuestion: PropTypes.func
 };
 export default StackList;
