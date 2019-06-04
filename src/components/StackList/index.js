@@ -38,8 +38,8 @@ class StackList extends Component {
             {
               _.sortBy(dataQuestion, 'date').reverse()
               .filter((question) => {
-                return question.question.toLowerCase().includes("google".toLowerCase()) || 
-                question.content.toLowerCase().includes("google".toLowerCase());
+                return question.question.toLowerCase().includes(searchWord.toLowerCase()) || 
+                question.content.toLowerCase().includes(searchWord.toLowerCase());
               })
               .map(item => {
                 return (

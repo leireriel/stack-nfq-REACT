@@ -55,7 +55,6 @@ class App extends Component {
 
   handleInputValue(event) {
     const searchWord = event.currentTarget.value;
-    console.log(searchWord);
     this.setState({
       searchWord: searchWord
     })
