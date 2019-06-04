@@ -1,13 +1,7 @@
-@import "../../scss/colors.scss";
-@import "../../scss/variables.scss";
+@import '../../scss/colors.scss';
+@import '../../scss/variables.scss';
 
-body{
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-.page__home{
+.page__home {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -22,13 +16,12 @@ body{
   text-align: center;
   width: 100%;
   min-height: 300px;
-
 }
 .header__home {
   width: 372px;
 }
 
-.home__main{
+.home__main {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -37,7 +30,7 @@ body{
   text-align: center;
 }
 
-.home__title{
+.home__title {
   font-family: $defaultfont;
   font-size: 30px;
   color: $colorwhite;
@@ -60,7 +53,7 @@ body{
   cursor: pointer;
 }
 
-.home__btn{
+.home__btn {
   font-family: $defaultfont;
   font-size: 33px;
   width: 400px;
