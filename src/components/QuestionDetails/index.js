@@ -44,6 +44,10 @@ const styles = theme => ({
     textTransform: 'capitalize',
     padding: '7px 11px',
     fontSize: 12
+  },
+  paperAnswer: {
+    margin: '20px 0px', 
+    padding: '30px',
   }
 });
 
@@ -80,7 +84,11 @@ class QuestionDetails extends React.Component {
                 {questionItem.answers.map((answers, index) => {
                   return (
                     <li key={index} className="question__answer">
-                      <Answer answers={answers} classPaper={classes.paper} questionItem={questionItem} updateQuestion={updateQuestion} />
+                      <Answer answers={answers} 
+                      classPaper={classes.paperAnswer} 
+                      questionItem={questionItem} 
+                      updateQuestion={updateQuestion} 
+                      />
                     </li>
                   );
                 })}

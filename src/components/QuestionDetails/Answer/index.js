@@ -5,6 +5,9 @@ import Grid from '@material-ui/core/Grid';
 import Badge from '@material-ui/core/Badge';
 import Favorite from '@material-ui/icons/Favorite';
 import PropTypes from 'prop-types';
+import Avatar from '@material-ui/core/Avatar';
+import avatarImg from '../../../images/avatar.png';
+import { formatDate } from '../../../data/commonFunctions';
 
 class Answer extends React.Component{
   constructor(props){
@@ -26,13 +29,20 @@ class Answer extends React.Component{
     return (
       <Grid item xs={12}>
         <Paper className={classPaper}>
-          <Badge className="answer__likes"
-          badgeContent={answers.likes} color="primary">
-            <Favorite className="answer__heart" onClick={this.moreLike}/>
-          </Badge>
-          <h3 className="answer__text">{answers.answer}</h3>
-          <h4 className="answer__author">{answers.author}</h4>
-          <h5 className="answer__date">{answers.date}</h5>
+          <div className="container__text"> 
+            <Badge className="answer__likes"
+            badgeContent={answers.likes} color="primary">
+              <Favorite className="answer__heart" onClick={this.moreLike}/>
+            </Badge>
+            <h3 className="answer__text">{answers.answer}</h3>
+          </div>
+          <div className="container__user">
+            <div className="container__face"> 
+              <h4 className="answer__author">{answers.author}</h4>
+              <Avatar alt="Remy Sharp" src={avatarImg}  className="answer__img"/>
+            </div>
+            <h5 className="answer__date">{formatDate(answers.date)}</h5>
+          </div>
         </Paper>
       </Grid>
     );
