@@ -5,14 +5,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 97px;
+  height: 89px;
   padding: 0 39px;
   position: relative;
 }
 
-.header__stackList,
-.header__link-logo {
-  height: 40px;
+.header__stackList {
+  background: url('../../images/logo-blue.svg') center center no-repeat;
+  background-size: contain;
+  height: 0;
+  overflow: hidden;
+  padding-top: 89px;
+  width: 165px;
+  margin: 0;
 }
 
 .header__button-link {
@@ -26,3 +31,29 @@
 .header__link-image {
   margin-right: 12px;
 }
+
+// .container__header {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 97px;
+//   padding: 0 39px;
+//   position: relative;
+// }
+
+// .header__stackList,
+// .header__link-logo {
+//   height: 40px;
+// }
+
+// .header__button-link {
+//   text-decoration: none;
+//   color: $colorblue;
+//   position: absolute;
+//   top: 27px;
+//   left: 39px;
+// }
+
+// .header__link-image {
+//   margin-right: 12px;
+// }

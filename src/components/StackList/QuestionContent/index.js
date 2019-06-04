@@ -18,12 +18,12 @@ const theme = createMuiTheme({
 
 const styles = theme => ({
   paper: {
-    padding: '27px 25px 37px'
+    padding: '20px 25px'
   },
   bigAvatar: {
-    margin: '10px 0 10px 10px',
-    width: 60,
-    height: 60
+    margin: '0 0 0 10px',
+    width: 50,
+    height: 50
   }
 });
 
@@ -32,7 +32,7 @@ function QuestionContent({ item, classes, children }) {
     <ThemeProvider theme={theme}>
       <Paper className={classes.paper}>
         <div className="title__container">
-          <h1 className="question__title">{item.question}</h1>
+          <h2 className="question__title">{item.question}</h2>
           <div className="question__user-container">
             <span className="question__author">{item.author}</span>
             <Avatar alt={item.author} src={userImage} className={classes.bigAvatar} />
