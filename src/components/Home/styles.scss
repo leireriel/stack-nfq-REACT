@@ -48,10 +48,16 @@
   color: $colorwhite;
   border: 2px solid $colorwhite;
   border-radius: 50%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: $defaultfont;
   font-size: 18px;
   cursor: pointer;
 }
+
+.info__btn:hover {
+  transform: scale(1.3);
+  transition: transform ease 1s;
+} 
 
 .home__btn {
   font-family: $defaultfont;
@@ -62,4 +68,9 @@
   border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+}
+
+.home__btn:hover {
+  background: $colorbordo;
+  color: $colorwhite;
 }
