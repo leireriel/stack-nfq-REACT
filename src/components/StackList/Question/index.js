@@ -8,7 +8,7 @@ import QuestionContent from '../QuestionContent';
 
 function Question({ item }) {
   return (
-    <Link className="link__question--wrapper" to={`question/${item.id}`}>
+    <Link className="link__question--wrapper" to={`question/${item.id}`} >
       <Grid item xs={12}>
         <QuestionContent item={item} />
       </Grid>

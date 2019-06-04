@@ -1,10 +1,13 @@
 @import '../../../scss/colors';
 @import '../../../scss/variables';
 
-
 .dialog__title {
   color: $colorblue;
   text-align: center;
+}
+
+.MuiFormLabel-root.Mui-focused {
+  color: $colorblue !important;
 }
 
 .MuiTypography-root.MuiTypography-h6 {

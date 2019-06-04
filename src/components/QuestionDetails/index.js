@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
 import { withStyles, createMuiTheme } from '@material-ui/core/styles';
@@ -46,23 +46,24 @@ const styles = theme => ({
     fontSize: 12
   },
   paperAnswer: {
-    margin: '20px 0px', 
-    padding: '30px',
+    margin: '20px 0px',
+    padding: '30px'
+  },
+  loading: {
+    width: '100%'
   }
 });
 
 class QuestionDetails extends React.Component {
-  
   componentDidMount() {
     window.scrollTo(0, 0);
   }
-  
-  render(){
-  const { dataQuestion, id, classes, updateQuestion} = this.props;
-  const questionItem = dataQuestion.find(question => question.id === parseInt(id));
-    return(
+
+  render() {
+    const { dataQuestion, id, classes, updateQuestion } = this.props;
+    const questionItem = dataQuestion.find(question => question.id === parseInt(id));
+    return (
       <div className="question__page">
-      {questionItem ? (
         <ThemeProvider theme={theme}>
           <Header>
             <Link to="/questions" className="header__button-link">
@@ -73,42 +74,43 @@ class QuestionDetails extends React.Component {
             </Link>
           </Header>
           <main className={`question__main ${classes.root}`}>
-            <section className="question__section">
-              <QuestionContent item={questionItem}>
-                <div className="question__content">{questionItem.content}</div>
-              </QuestionContent>
-            </section>
-            <section className="answer__section">
-              <h2 className="section__title">{questionItem.answers.length} respuestas</h2>
-              <ul className="answer__list">
-                {questionItem.answers.map((answers, index) => {
-                  return (
-                    <li key={index} className="question__answer">
-                      <Answer answers={answers} 
-                      classPaper={classes.paperAnswer} 
-                      questionItem={questionItem} 
-                      updateQuestion={updateQuestion} 
-                      />
-                    </li>
-                  );
-                })}
-              </ul>
-            </section>
-            <section className="section__form">
-              <h2 className="section__title">Añade tu respuesta</h2>
-              <Form classPaper={classes.paperForm} questionItem={questionItem} updateQuestion={updateQuestion} classButton={classes.button} />
-            </section>
+            {questionItem ? (
+              <Fragment>
+                <section className="question__section">
+                  <QuestionContent item={questionItem}>
+                    <div className="question__content">{questionItem.content}</div>
+                  </QuestionContent>
+                </section>
+                <section className="answer__section">
+                  <h3 className="section__title">{questionItem.answers.length} respuestas</h3>
+                  <ul className="answer__list">
+                    {questionItem.answers.map((answers, index) => {
+                      return (
+                        <li key={index} className="question__answer">
+                          <Answer answers={answers} classPaper={classes.paperAnswer} questionItem={questionItem} updateQuestion={updateQuestion} />
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </section>
+                <section className="section__form">
+                  <h3 className="section__title">Añade tu respuesta</h3>
+                  <Form classPaper={classes.paperForm} questionItem={questionItem} updateQuestion={updateQuestion} classButton={classes.button} />
+                </section>
+              </Fragment>
+            ) : (
+              <div className="error__container">
+                <CircularProgress color="primary" className={classes.loading} />
+                <p className="text__error">No se puede conectar: comprueba tu conexión a Internet o que el servidor funcione correctamente</p>
+              </div>
+            )}
           </main>
+          <Footer />
         </ThemeProvider>
-      ) : (
-        <CircularProgress color="primary" />
-      )}
-      <Footer />
-    </div>
+      </div>
     );
   }
 }
-
 
 QuestionDetails.propTypes = {
   dataQuestion: PropTypes.arrayOf(PropTypes.object),

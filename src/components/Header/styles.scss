@@ -6,7 +6,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   height: 170px;
+=======
+  height: 89px;
+>>>>>>> final-touches
   padding: 0 39px;
   @media all and (min-width: $bptablet){
     position: relative;
@@ -14,12 +18,22 @@
   }
 }
 
-.header__stackList,
+.header__stackList {
+  background: url('../../images/logo-blue.svg') center center no-repeat;
+  background-size: contain;
+  height: 0;
+  overflow: hidden;
+  padding-top: 89px;
+  width: 165px;
+  margin: 0;
+}
+
 .header__link-logo {
-  height: 40px;
+  text-decoration: none;
 }
 
 .header__button-link {
+<<<<<<< HEAD
   padding: 0 0 40px 0;
   @media all and (min-width: $bptablet){
     text-decoration: none;
@@ -33,3 +47,11 @@
 .header__link-image {
   margin-right: 12px;
 }
+=======
+  text-decoration: none;
+  color: $colorblue;
+  position: absolute;
+  top: 27px;
+  left: 39px;
+}
+>>>>>>> final-touches

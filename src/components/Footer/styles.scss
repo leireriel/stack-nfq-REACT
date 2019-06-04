@@ -16,15 +16,12 @@
   } 
 }
 
-.footer__nfq {
-  height: 40px;
-}
-
+.footer__nfq,
 .footer__adalab {
   height: 40px;
 }
 
-.link__team{
+.link__team {
   text-decoration: none;
-  color: black;
+  color: $colorblack;
 }
