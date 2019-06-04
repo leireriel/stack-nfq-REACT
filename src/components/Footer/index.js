@@ -10,7 +10,7 @@ class Footer extends React.Component {
         <a href="https://nfq.es/" target="_blank" rel="noopener noreferrer">
           <img className="footer__nfq" src={logoNFQ} alt="Logo de nfq" />
         </a>
-        <p className="footer__author">Diseñado por el equipo | © 2019</p>
+        <p className="footer__author">© GirlsOverflow | 2019</p>
         <a href="https://adalab.es/" target="_blank" rel="noopener noreferrer">
           <img className="footer__adalab" src={logoAdalab} alt="Logo de Adalab" />
         </a>
