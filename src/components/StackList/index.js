@@ -29,6 +29,7 @@ class StackList extends Component {
   render() {
     const { dataQuestion, createNewQuestion, handleInputValue, searchWord } = this.props;
     const { isOpen } = this.state;
+    console.log(dataQuestion)
     return (
       <div className="container__stacklist">
         <Header />
@@ -39,7 +40,8 @@ class StackList extends Component {
               _.sortBy(dataQuestion, 'date').reverse()
               .filter((question) => {
                 return question.question.toLowerCase().includes(searchWord.toLowerCase()) || 
-                question.content.toLowerCase().includes(searchWord.toLowerCase());
+                question.content.toLowerCase().includes(searchWord.toLowerCase()) ||
+                question.tags.toLowerCase().includes(searchWord.toLowerCase());
               })
               .map(item => {
                 return (
