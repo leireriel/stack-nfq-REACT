@@ -1,0 +1,78 @@
+@import '../../../scss/colors';
+
+.member__name {
+  margin: 10px 0;
+}
+
+.member__image {
+  height: 200px;
+  border-radius: 50%;
+}
+
+.member__image--container {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: 0 0 7px 3px $colorwhite;
+  margin-bottom: 10px;
+}
+
+.member__bio,
+.member__role {
+  color: $colorgrey;
+  margin: 0;
+  font-weight: bold;
+}
+
+.member__linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.member__linkItem {
+  margin: 5px;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  border: 1px solid $colorgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    box-shadow: 0 0 5px 2px $colorwhite;
+  }
+}
+
+.social_media_link {
+  text-decoration: none;
+  color: $colorblack;
+  font-size: 20px;
+  // &:first-of-type {
+  //   color: $colorlightblue;
+  // }
+}
+
+// $colorlightblue: rgba(69, 149, 203, 0.7);
+// $colorblack: #000000;
+// $colorbordo: #e8424a;
+// $colororange: #ef7b00;
+
+.fab.fa-github-alt {
+  color: $colorlightblue;
+}
+
+.fab.fa-twitter {
+  color: $colorbordo;
+}
+
+.fab.fa-linkedin-in {
+  color: $colorblack;
+}
+
+.fas.fa-envelope {
+  color: $colororange;
+}

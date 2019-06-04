@@ -32,7 +32,7 @@ const styles = theme => ({
     padding: '27px 25px 37px'
   },
   paperForm: {
-    backgroundColor: '#E8E8E8',
+    backgroundColor: '#EAEAEA',
     padding: '30px 50px 38px',
     marginBottom: theme.spacing(5)
   },

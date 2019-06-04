@@ -1,5 +1,5 @@
-@import "../../scss/colors.scss";
-@import "../../scss/variables.scss";
+@import '../../scss/colors.scss';
+@import '../../scss/variables.scss';
 
 body {
   box-sizing: border-box;
@@ -7,7 +7,7 @@ body {
   margin: 0;
 }
 
-.container__footer{
+.container__footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -15,12 +15,13 @@ body {
   font-family: $defaultfont;
   padding: 0 25px;
   height: 70px;
+  border-top: 1px solid $colorborder;
 }
 
-.footer__nfq{
+.footer__nfq {
   height: 40px;
 }
 
-.footer__adalab{
+.footer__adalab {
   height: 40px;
 }

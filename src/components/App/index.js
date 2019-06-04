@@ -33,12 +33,11 @@ class App extends Component {
   }
 
   createNewQuestion(question) {
-    createQuestion(question) 
-    .then(questionData => {
-      const newArrQuestions = [...this.state.dataQuestion]
-      newArrQuestions.push(questionData)
-      this.setState( {dataQuestion : newArrQuestions} )
-     })
+    createQuestion(question).then(questionData => {
+      const newArrQuestions = [...this.state.dataQuestion];
+      newArrQuestions.push(questionData);
+      this.setState({ dataQuestion: newArrQuestions });
+    });
   }
 
   updateQuestionAnswer(question) {
@@ -57,7 +56,7 @@ class App extends Component {
     return (
       <Switch>
         <Route exact path="/home" render={() => <Home />} />
-        <Route exact path="/questions" render={() => <StackList dataQuestion={dataQuestion} createNewQuestion={this.createNewQuestion}/>} />
+        <Route exact path="/questions" render={() => <StackList dataQuestion={dataQuestion} createNewQuestion={this.createNewQuestion} />} />
         <Route exact path="/question/:id" render={routeProps => <QuestionDetails id={routeProps.match.params.id} dataQuestion={dataQuestion} updateQuestion={this.updateQuestionAnswer} />} />
         <Route exact path="/team" render={() => <TeamInfo />} />
         <Redirect from="/" to="/home" />
