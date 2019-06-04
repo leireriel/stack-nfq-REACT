@@ -101,7 +101,7 @@ class QuestionDetails extends React.Component {
             ) : (
               <div className="error__container">
                 <CircularProgress color="primary" className={classes.loading} />
-                <p className="text__error">O que no hay conexión a Internet, o el servidor no funciona correctamente :(</p>
+                <p className="text__error">No se puede conectar: comprueba tu conexión a Internet o que el servidor funcione correctamente</p>
               </div>
             )}
           </main>
