@@ -4,11 +4,13 @@
   display: flex;
   flex-direction: column;
 }
+
 .container__text {
   display: flex;
   flex-direction: row;
   text-align: left;
 }
+
 .answer__heart {
   color: $colorbordo;
   opacity: 0.85;
@@ -32,6 +34,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  color: $colorgrey;
 }
 
 .container__face {
@@ -50,7 +53,5 @@
 }
 
 .answer__date  {
-  margin: 0px;
-  padding: 0 10px;
-  color: $colorgrey;
+  margin: 0;
 }

@@ -9,39 +9,37 @@ import Avatar from '@material-ui/core/Avatar';
 import avatarImg from '../../../images/avatar.png';
 import { formatDate } from '../../../data/commonFunctions';
 
-class Answer extends React.Component{
-  constructor(props){
+class Answer extends React.Component {
+  constructor(props) {
     super(props);
-    this.moreLike=this.moreLike.bind(this);
+    this.moreLike = this.moreLike.bind(this);
   }
 
-  moreLike(){
-    const {answers, questionItem, updateQuestion} =this.props;
-      this.setState(() => {
-        parseInt(answers.likes ++ );
-        updateQuestion(questionItem);
-      }
-    )
+  moreLike() {
+    const { answers, questionItem, updateQuestion } = this.props;
+    this.setState(() => {
+      parseInt(answers.likes++);
+      updateQuestion(questionItem);
+    });
   }
 
-  render(){
+  render() {
     const { classPaper, answers } = this.props;
     return (
       <Grid item xs={12}>
         <Paper className={classPaper}>
-          <div className="container__text"> 
-            <Badge className="answer__likes"
-            badgeContent={answers.likes} color="primary">
-              <Favorite className="answer__heart" onClick={this.moreLike}/>
+          <div className="container__text">
+            <Badge className="answer__likes" badgeContent={answers.likes} color="primary">
+              <Favorite className="answer__heart" onClick={this.moreLike} />
             </Badge>
-            <h3 className="answer__text">{answers.answer}</h3>
+            <p className="answer__text">{answers.answer}</p>
           </div>
           <div className="container__user">
-            <div className="container__face"> 
-              <h4 className="answer__author">{answers.author}</h4>
-              <Avatar alt="Remy Sharp" src={avatarImg}  className="answer__img"/>
+            <div className="container__face">
+              <p className="answer__author">{answers.author}</p>
+              <Avatar alt={answers.author} src={avatarImg} className="answer__img" />
             </div>
-            <h5 className="answer__date">{formatDate(answers.date)}</h5>
+            <p className="answer__date">{formatDate(answers.date)}</p>
           </div>
         </Paper>
       </Grid>
