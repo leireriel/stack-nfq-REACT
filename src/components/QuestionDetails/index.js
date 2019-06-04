@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
 import { withStyles, createMuiTheme } from '@material-ui/core/styles';
@@ -48,6 +48,9 @@ const styles = theme => ({
   paperAnswer: {
     margin: '20px 0px',
     padding: '30px'
+  },
+  loading: {
+    width: '100%'
   }
 });
 
@@ -61,44 +64,49 @@ class QuestionDetails extends React.Component {
     const questionItem = dataQuestion.find(question => question.id === parseInt(id));
     return (
       <div className="question__page">
-        {questionItem ? (
-          <ThemeProvider theme={theme}>
-            <Header>
-              <Link to="/questions" className="header__button-link">
-                <Button variant="outlined" color="primary" className={classes.headerButton}>
-                  <img src={arrowIcon} alt="back arrow link" className="header__link-image" />
-                  Volver atrás
-                </Button>
-              </Link>
-            </Header>
-            <main className={`question__main ${classes.root}`}>
-              <section className="question__section">
-                <QuestionContent item={questionItem}>
-                  <div className="question__content">{questionItem.content}</div>
-                </QuestionContent>
-              </section>
-              <section className="answer__section">
-                <h3 className="section__title">{questionItem.answers.length} respuestas</h3>
-                <ul className="answer__list">
-                  {questionItem.answers.map((answers, index) => {
-                    return (
-                      <li key={index} className="question__answer">
-                        <Answer answers={answers} classPaper={classes.paperAnswer} questionItem={questionItem} updateQuestion={updateQuestion} />
-                      </li>
-                    );
-                  })}
-                </ul>
-              </section>
-              <section className="section__form">
-                <h3 className="section__title">Añade tu respuesta</h3>
-                <Form classPaper={classes.paperForm} questionItem={questionItem} updateQuestion={updateQuestion} classButton={classes.button} />
-              </section>
-            </main>
-          </ThemeProvider>
-        ) : (
-          <CircularProgress color="primary" />
-        )}
-        <Footer />
+        <ThemeProvider theme={theme}>
+          <Header>
+            <Link to="/questions" className="header__button-link">
+              <Button variant="outlined" color="primary" className={classes.headerButton}>
+                <img src={arrowIcon} alt="back arrow link" className="header__link-image" />
+                Volver atrás
+              </Button>
+            </Link>
+          </Header>
+          <main className={`question__main ${classes.root}`}>
+            {questionItem ? (
+              <Fragment>
+                <section className="question__section">
+                  <QuestionContent item={questionItem}>
+                    <div className="question__content">{questionItem.content}</div>
+                  </QuestionContent>
+                </section>
+                <section className="answer__section">
+                  <h3 className="section__title">{questionItem.answers.length} respuestas</h3>
+                  <ul className="answer__list">
+                    {questionItem.answers.map((answers, index) => {
+                      return (
+                        <li key={index} className="question__answer">
+                          <Answer answers={answers} classPaper={classes.paperAnswer} questionItem={questionItem} updateQuestion={updateQuestion} />
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </section>
+                <section className="section__form">
+                  <h3 className="section__title">Añade tu respuesta</h3>
+                  <Form classPaper={classes.paperForm} questionItem={questionItem} updateQuestion={updateQuestion} classButton={classes.button} />
+                </section>
+              </Fragment>
+            ) : (
+              <div className="error__container">
+                <CircularProgress color="primary" className={classes.loading} />
+                <p className="text__error">O que no hay conexión a Internet, o el servidor no funciona correctamente :(</p>
+              </div>
+            )}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </div>
     );
   }
