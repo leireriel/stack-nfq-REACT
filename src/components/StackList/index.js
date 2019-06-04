@@ -12,11 +12,9 @@ import _ from 'lodash';
 class StackList extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       isOpen: false
     };
-
     this.dialogueFunction = this.dialogueFunction.bind(this);
   }
 
@@ -29,19 +27,17 @@ class StackList extends Component {
   render() {
     const { dataQuestion, createNewQuestion, handleInputValue, searchWord } = this.props;
     const { isOpen } = this.state;
-    console.log(dataQuestion)
+    console.log(dataQuestion);
     return (
       <div className="container__stacklist">
         <Header />
         <main>
-          <Filter handleInputValue={handleInputValue}/>
-          <ul className="list">
-            {
-              _.sortBy(dataQuestion, 'date').reverse()
-              .filter((question) => {
-                return question.question.toLowerCase().includes(searchWord.toLowerCase()) || 
-                question.content.toLowerCase().includes(searchWord.toLowerCase()) ||
-                question.tags.toLowerCase().includes(searchWord.toLowerCase());
+          <Filter handleInputValue={handleInputValue} />
+          <ul className="question__list">
+            {_.sortBy(dataQuestion, 'date')
+              .reverse()
+              .filter(question => {
+                return question.question.toLowerCase().includes(searchWord.toLowerCase()) || question.content.toLowerCase().includes(searchWord.toLowerCase()) || question.tags.toLowerCase().includes(searchWord.toLowerCase());
               })
               .map(item => {
                 return (
@@ -61,6 +57,9 @@ class StackList extends Component {
 }
 
 StackList.propTypes = {
-  dataQuestion: PropTypes.arrayOf(PropTypes.object)
+  dataQuestion: PropTypes.arrayOf(PropTypes.object),
+  createNewQuestion: PropTypes.func,
+  handleInputValue: PropTypes.func,
+  searchWord: PropTypes.string
 };
 export default StackList;

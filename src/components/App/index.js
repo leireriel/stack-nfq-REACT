@@ -21,7 +21,7 @@ class App extends Component {
     this.updateQuestionAnswer = this.updateQuestionAnswer.bind(this);
     this.handleInputValue = this.handleInputValue.bind(this);
   }
-  
+
   componentDidMount() {
     this.getQuestion();
   }
@@ -57,7 +57,7 @@ class App extends Component {
     const searchWord = event.currentTarget.value;
     this.setState({
       searchWord: searchWord
-    })
+    });
   }
 
   render() {
@@ -65,24 +65,9 @@ class App extends Component {
     return (
       <Switch>
         <Route exact path="/home" render={() => <Home />} />
-        <Route
-          exact path="/questions"
-          render={() =>
-            <StackList
-              dataQuestion={dataQuestion}
-              handleInputValue={this.handleInputValue}
-              searchWord={searchWord}
-            />}
-        />
-        <Route
-          exact path="/question/:id"
-          render={routeProps =>
-            <QuestionDetails
-              id={routeProps.match.params.id}
-              dataQuestion={dataQuestion}
-              updateQuestion={this.updateQuestionAnswer}
-            />} />
-        {/* <Route exact path="/card" render={() => <TeamInfo />} /> */}
+        <Route exact path="/questions" render={() => <StackList dataQuestion={dataQuestion} handleInputValue={this.handleInputValue} searchWord={searchWord} createNewQuestion={this.createNewQuestion} />} />
+        <Route exact path="/question/:id" render={routeProps => <QuestionDetails id={routeProps.match.params.id} dataQuestion={dataQuestion} updateQuestion={this.updateQuestionAnswer} />} />
+        <Route exact path="/team" render={() => <TeamInfo />} />
         <Redirect from="/" to="/home" />
       </Switch>
     );
