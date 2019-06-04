@@ -1,42 +1,41 @@
-@import '../../../scss/variables';
-@import '../../../scss/colors';
+// @import '../../../scss/variables';
+// @import '../../../scss/colors';
 
 .link__question--wrapper {
   text-decoration: none;
 }
 
-.wrapper__question {
-  display: flex;
-  justify-content: space-between;
-}
+// .wrapper__question {
+//   display: flex;
+//   justify-content: space-between;
+// }
 
-.container__question {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+// .container__question {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+// }
 
-.question__title {
-  color: $colorgrey;
-  font-size: 25px;
-}
+// .question__title {
+//   color: $colorgrey;
+//   font-size: 25px;
+// }
 
-.question__chips {
-  font-size: 14px;
-  margin: 18px 0 0;
-}
+// .question__chips {
+//   font-size: 14px;
+//   margin: 18px 0 0;
+// }
 
-.container__author {
-  display: flex;
-  flex-direction: column;
-}
+// .container__author {
+//   display: flex;
+//   flex-direction: column;
+// }
 
-.container__author--detail {
-  display: flex;
-  align-items: right;
-  background-color: red;
-}
+// .container__author--detail {
+//   display: flex;
+//   align-items: right;
+//   background-color: red;
+// }
 
-.question__date {
-  
-}
+// .question__date {
+// }

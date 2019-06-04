@@ -1,13 +1,4 @@
-@import '../../scss/colors';
-@import '../../scss/variables';
-
-.question__page {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  font-family: $defaultfont;
-}
+@import '../../../scss/colors';
 
 .question__main {
   padding: 0 39px;

@@ -5,12 +5,6 @@ body {
   font-family: $defaultfont;
 }
 
-.container__stacklist{
-  .container__footer{
-    border-top: 1px solid $colorborder;
-  }
-}
-
 .question__list {
   border: 0;
   padding: 0;
@@ -21,4 +15,8 @@ body {
   list-style: none;
   margin: 20px 40px;
   border: 1px solid $colorlightgrey;
+}
+
+.question__title {
+  font-size: 25px;
 }

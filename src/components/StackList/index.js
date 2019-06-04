@@ -26,7 +26,7 @@ class StackList extends Component {
   }
 
   render() {
-    const { dataQuestion } = this.props;
+    const { dataQuestion, createNewQuestion } = this.props;
     const { isOpen } = this.state;
     return (
       <div className="container__stacklist">
@@ -44,7 +44,7 @@ class StackList extends Component {
           </ul>
           <FloatingActionButtons dialogueFunction={this.dialogueFunction} />
         </main>
-        {isOpen && <ModalInfo dialogueFunction={this.dialogueFunction} />}
+        {isOpen && <ModalInfo dialogueFunction={this.dialogueFunction} createNewQuestion={createNewQuestion} arrLength={dataQuestion.length} />}
         <Footer />
       </div>
     );
