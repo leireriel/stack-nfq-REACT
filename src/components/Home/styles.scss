@@ -18,7 +18,10 @@
   min-height: 300px;
 }
 .header__home {
-  width: 372px;
+  width: 250px;
+  @media all and (min-width: $bptablet){
+    width: 372px;
+  }
 }
 
 .home__main {
@@ -32,10 +35,13 @@
 
 .home__title {
   font-family: $defaultfont;
-  font-size: 30px;
   color: $colorwhite;
   margin: 60px 30px 60px;
   text-align: center;
+  font-size: 25px;
+  @media all and (min-width: $bptablet){
+    font-size: 30px;
+  }
 }
 
 .info__btn {
@@ -55,11 +61,15 @@
 
 .home__btn {
   font-family: $defaultfont;
-  font-size: 33px;
-  width: 400px;
+  font-size: 23px;
+  width: 250px;
   color: $colorgrey;
   height: 70px;
   border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  @media all and (min-width: $bptablet){
+    width: 400px;
+    font-size: 33px;
+  }
 }

@@ -33,11 +33,19 @@
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-self: center;
   height: 100%;
   align-items: flex-start;
   flex-grow: 1;
-  padding: 0 0 20px;
+  padding: 0 10px 20px;
+  @media all and (min-width: 1160px){
+    flex-direction: row;
+    padding: 0 20px;
+    justify-content: space-between;
+    max-width: 1300px;
+    max-height: 900px;
+  }
 }
 
 .member__item {
@@ -46,6 +54,7 @@
   justify-content: space-between;
   max-width: 200px;
   margin: 0 20px;
+  padding: 20px 0;
   &:nth-child(odd) {
     align-self: flex-end;
   }
@@ -55,6 +64,10 @@
   color: $colorblack;
   max-width: 800px;
   margin: 0 auto 50px;
-  font-size: 22px;
   line-height: 30px;
+  font-size: 18px;
+  padding:  0 50px;
+  @media all and (min-width: $bptablet){
+    font-size: 22px;
+  }
 }
