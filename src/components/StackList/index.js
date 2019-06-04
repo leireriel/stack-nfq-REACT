@@ -26,13 +26,13 @@ class StackList extends Component {
   }
 
   render() {
-    const { dataQuestion } = this.props;
+    const { dataQuestion, handleInputValue, searchWord } = this.props;
     const { isOpen } = this.state;
     return (
       <div className="container__stacklist">
         <Header />
         <main>
-          <Filter />
+          <Filter handleInputValue={handleInputValue}/>
           <ul className="list">
             {dataQuestion.map(item => {
               return (

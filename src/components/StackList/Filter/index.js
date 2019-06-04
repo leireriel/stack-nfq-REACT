@@ -11,9 +11,9 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function Filter() {
-  const classes = useStyles();
 
+function Filter({handleInputValue}) {
+  const classes = useStyles();
   return (
     <Fragment>
       <div className="filter__wrapper">
@@ -23,7 +23,11 @@ function Filter() {
               <i className="fas fa-search"></i>
             </Grid>
             <Grid item xs={11}>
-              <TextField type="text" label="Buscar..." fullWidth/>
+              <TextField
+                type="text"
+                label="Buscar..."
+                onChange={handleInputValue}
+                fullWidth />
             </Grid>
           </Grid>
         </div>
