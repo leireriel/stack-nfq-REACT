@@ -2,6 +2,8 @@ import React from 'react';
 import './styles.scss';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import Badge from '@material-ui/core/Badge';
+import Favorite from '@material-ui/icons/Favorite';
 import PropTypes from 'prop-types';
 
 class Answer extends React.Component{
@@ -18,19 +20,16 @@ class Answer extends React.Component{
       }
     )
   }
-  
 
   render(){
     const { classPaper, answers } = this.props;
     return (
       <Grid item xs={12}>
         <Paper className={classPaper}>
-          <div className="answer__heart">
-            <i className="fas fa-heart"
-             onClick={this.moreLike}>
-            {answers.likes}
-            </i>
-          </div>
+          <Badge className="answer__likes"
+          badgeContent={answers.likes} color="primary">
+            <Favorite className="answer__heart" onClick={this.moreLike}/>
+          </Badge>
           <h3 className="answer__text">{answers.answer}</h3>
           <h4 className="answer__author">{answers.author}</h4>
           <h5 className="answer__date">{answers.date}</h5>

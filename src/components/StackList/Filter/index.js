@@ -11,7 +11,6 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-
 function Filter({handleInputValue}) {
   const classes = useStyles();
   return (

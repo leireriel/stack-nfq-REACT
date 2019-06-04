@@ -47,10 +47,17 @@ const styles = theme => ({
   }
 });
 
-const QuestionDetails = ({ dataQuestion, id, classes, updateQuestion }) => {
+class QuestionDetails extends React.Component {
+  
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+  
+  render(){
+  const { dataQuestion, id, classes, updateQuestion} = this.props;
   const questionItem = dataQuestion.find(question => question.id === parseInt(id));
-  return (
-    <div className="question__page">
+    return(
+      <div className="question__page">
       {questionItem ? (
         <ThemeProvider theme={theme}>
           <Header>
@@ -90,8 +97,10 @@ const QuestionDetails = ({ dataQuestion, id, classes, updateQuestion }) => {
       )}
       <Footer />
     </div>
-  );
-};
+    );
+  }
+}
+
 
 QuestionDetails.propTypes = {
   dataQuestion: PropTypes.arrayOf(PropTypes.object),
