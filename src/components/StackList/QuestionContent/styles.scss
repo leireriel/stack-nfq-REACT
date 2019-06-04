@@ -1,4 +1,6 @@
 @import '../../../scss/colors';
+@import '../../../scss/variables';
+
 
 .question__title {
   color: $colorgrey;
@@ -14,8 +16,15 @@
 .title__container,
 .subtitle__container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  @media all and (min-width: $bptablet){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
 }
 
 .question__author {
@@ -33,12 +42,16 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  align-items: center;
 }
 
 .question__tags-list {
   display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  flex-wrap: wrap;
   .question__tag {
-    margin-right: 10px;
+    margin: 5px;
     background-color: $colorblue;
     color: $colorwhite;
     padding: 5px 8px;
