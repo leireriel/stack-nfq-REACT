@@ -4,5 +4,9 @@
   width: 30px;
   height: 30px;
   color: $colorred;
-  opacity: 0.9;
+  opacity: 0.85;
+  &:hover{
+    cursor: pointer;
+    opacity: 1;
+  }
 }
