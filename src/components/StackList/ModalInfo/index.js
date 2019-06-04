@@ -41,16 +41,16 @@ class ModalInfo extends Component {
     super(props);
     this.state = {
       createQuestion: {
-        name: '',
+        question: '',
+        content: '',
         tags: '',
-        title: '',
-        details: ''
+        author: ''
       },
       error: {
-        name: false,
+        question: false,
+        content: false,
         tags: false,
-        title: false,
-        details: false
+        author: false
       }
     };
 
@@ -74,23 +74,23 @@ class ModalInfo extends Component {
     this.props.createNewQuestion(newQuestion);
     this.setState({
       createQuestion: {
-        name: '',
+        question: '',
+        content: '',
         tags: '',
-        title: '',
-        details: ''
+        author: ''
       },
       error: {
-        name: false,
+        question: false,
+        content: false,
         tags: false,
-        title: false,
-        details: false
+        author: false
       }
     })
     this.props.dialogueFunction();
   }
 
   render() {
-    const { createQuestion: { name, tags, title, details }, error } = this.state;
+    const { createQuestion: { question, content, tags, author }, error } = this.state;
     const { dialogueFunction } = this.props;
     return (
       <ThemeProvider theme={theme}>
@@ -98,12 +98,12 @@ class ModalInfo extends Component {
           <DialogTitle id="form-dialog-title" className="dialog__title" >Añade una nueva pregunta</DialogTitle>
           <DialogContent>
             <TextField
-              onChange={this.handleChange('name')}
-              value={name}
+              onChange={this.handleChange('author')}
+              value={author}
               required
               label="Nombre Usuario"
-              error={error.name}
-              helperText={error.name ? 'Por favor, rellena este campo' : ''}
+              error={error.author}
+              helperText={error.author ? 'Por favor, rellena este campo' : ''}
               fullWidth
             />
             <TextField
@@ -116,21 +116,21 @@ class ModalInfo extends Component {
               fullWidth
             />
             <TextField
-              onChange={this.handleChange('title')}
-              value={title}
+              onChange={this.handleChange('question')}
+              value={question}
               required
               label="Titulo Pregunta"
-              error={error.title}
-              helperText={error.title ? 'Por favor, rellena este campo' : ''}
+              error={error.question}
+              helperText={error.question ? 'Por favor, rellena este campo' : ''}
               fullWidth
             />
             <TextField
-              onChange={this.handleChange('details')}
-              value={details}
+              onChange={this.handleChange('content')}
+              value={content}
               required
               label="Detalle Pregunta"
-              error={error.details}
-              helperText={error.details ? 'Por favor, rellena este campo' : ''}
+              error={error.content}
+              helperText={error.content ? 'Por favor, rellena este campo' : ''}
               fullWidth
               multiline
               rows='10'
@@ -140,7 +140,7 @@ class ModalInfo extends Component {
             <Button color="primary" onClick={dialogueFunction}>
               Cancelar
           </Button>
-            <Button color="primary" disabled={!name || !tags || !title || !details} onClick={this.sendQuestion}>
+            <Button color="primary" disabled={!question || !content || !tags || !author} onClick={this.sendQuestion}>
               Aceptar
           </Button>
           </DialogActions>
