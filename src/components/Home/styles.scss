@@ -8,7 +8,7 @@
   min-height: 100vh;
 }
 
-.container__header--home {
+.container__header-home {
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -17,6 +17,7 @@
   width: 100%;
   min-height: 300px;
 }
+
 .header__home {
   width: 372px;
 }
@@ -58,6 +59,11 @@
   }
 }
 
+.home__btn-link {
+  width: 400px;
+  margin: 0 auto;
+}
+
 .home__btn {
   font-family: $defaultfont;
   font-size: 33px;
@@ -67,4 +73,6 @@
   border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  background: $colorwhite;
+  border: 0;
 }
