@@ -8,7 +8,7 @@
   min-height: 100vh;
 }
 
-.container__header--home {
+.container__header-home {
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -37,6 +37,7 @@
   color: $colorwhite;
   margin: 60px 30px 60px;
   text-align: center;
+  font-weight: normal;
 }
 
 .info__btn {
@@ -52,7 +53,16 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: $defaultfont;
   font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 3px 2px $colorgrey;
+  }
+}
+
+.home__btn-link {
+  width: 400px;
+  margin: 0 auto;
 }
 
 .info__btn:hover {
@@ -69,6 +79,8 @@
   border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  background: $colorwhite;
+  border: 0;
 }
 
 .home__btn:hover {

@@ -12,10 +12,12 @@
   border-top: 1px solid $colorborder;
 }
 
-.footer__nfq {
+.footer__nfq,
+.footer__adalab {
   height: 40px;
 }
 
-.footer__adalab {
-  height: 40px;
+.link__team {
+  text-decoration: none;
+  color: $colorblack;
 }

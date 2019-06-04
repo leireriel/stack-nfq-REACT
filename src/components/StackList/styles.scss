@@ -3,9 +3,16 @@
 
 .container__stacklist {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   .container__footer {
     margin-top: 40px;
   }
+}
+
+.stacklist__main {
+  flex-grow: 1;
 }
 
 .question__list {
