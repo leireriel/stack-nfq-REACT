@@ -6,7 +6,8 @@ import './styles.scss';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Home from '../Home';
 import QuestionDetails from '../QuestionDetails';
-// import TeamInfo from '../TeamInfo';
+import { createQuestion } from '../../services/createQuestion';
+import TeamInfo from '../TeamInfo';
 
 class App extends Component {
   constructor(props) {
@@ -16,9 +17,11 @@ class App extends Component {
       searchWord: ''
     };
     this.getQuestion = this.getQuestion.bind(this);
+    this.createNewQuestion = this.createNewQuestion.bind(this);
     this.updateQuestionAnswer = this.updateQuestionAnswer.bind(this);
     this.handleInputValue = this.handleInputValue.bind(this);
   }
+  
   componentDidMount() {
     this.getQuestion();
   }
@@ -28,6 +31,14 @@ class App extends Component {
       this.setState({
         dataQuestion: data
       });
+    });
+  }
+
+  createNewQuestion(question) {
+    createQuestion(question).then(questionData => {
+      const newArrQuestions = [...this.state.dataQuestion];
+      newArrQuestions.push(questionData);
+      this.setState({ dataQuestion: newArrQuestions });
     });
   }
 

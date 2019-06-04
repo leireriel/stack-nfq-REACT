@@ -10,18 +10,20 @@
 }
 
 .question__main {
-  padding: 0 25px;
+  padding: 0 39px;
 }
 
 .question__title {
   color: $colorgrey;
   margin: 0;
+  font-size: 25px;
 }
 
 .section__title {
   color: $colorgrey;
   font-weight: normal;
   font-size: 20px;
+  margin: 65px 0 23px;
 }
 
 .question__date,
@@ -49,7 +51,7 @@
 }
 
 .question__content {
-  padding: 30px 70px;
+  padding: 50px 80px;
 }
 
 .answer__list,
