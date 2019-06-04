@@ -3,13 +3,17 @@
 
 .container__footer {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  font-family: $defaultfont;
-  padding: 0 25px;
-  height: 70px;
+  flex-direction: column;
   border-top: 1px solid $colorborder;
+  align-items: center;
+  padding: 10px 0;
+  font-family: $defaultfont;
+  @media all and (min-width: $bptablet){
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 25px;
+    height: 70px;
+  } 
 }
 
 .footer__nfq {
