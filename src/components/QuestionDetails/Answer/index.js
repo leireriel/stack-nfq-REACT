@@ -25,6 +25,7 @@ class Answer extends React.Component{
     return (
       <Grid item xs={12}>
         <Paper className={classPaper}>
+          
           <div className="answer__heart">
             <i className="fas fa-heart"
              onClick={this.moreLike}>
