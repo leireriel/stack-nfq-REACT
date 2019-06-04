@@ -1,4 +1,5 @@
 @import '../../../scss/colors';
+
 .MuiPaper-root.MuiPaper-elevation1.QuestionDetails-paperAnswer-7.MuiPaper-rounded {
   display: flex;
   flex-direction: column;
@@ -11,7 +12,7 @@
 .answer__heart {
   color: $colorbordo;
   opacity: 0.85;
-  &:hover{
+  &:hover {
     cursor: pointer;
     opacity: 1;
   }
@@ -32,19 +33,23 @@
   flex-direction: column;
   align-items: flex-end;
 }
+
 .container__face {
   display: flex;
 }
+
 .answer__author {
   font-size: 15px;
   padding-right: 20px;
   color: $colorblue;
 }
+
 .MuiAvatar-root.answer__img {
   width: 50px;
   height: auto;
 }
-.answer__date {
+
+.answer__date  {
   margin: 0px;
   padding: 0 10px;
   color: $colorgrey;

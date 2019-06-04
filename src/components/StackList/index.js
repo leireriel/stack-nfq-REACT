@@ -21,7 +21,7 @@ class StackList extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
-  
+
   dialogueFunction() {
     this.setState(prevState => {
       return { isOpen: !prevState.isOpen };
@@ -34,10 +34,10 @@ class StackList extends Component {
     return (
       <div className="container__stacklist">
         <Header />
-        <main>
+        <main className="stacklist__main">
           <Filter handleInputValue={handleInputValue} />
           <ul className="question__list">
-            {_.sortBy(dataQuestion, (question) => {
+            {_.sortBy(dataQuestion, question => {
               return new Date(question.date);
             })
               .reverse()
