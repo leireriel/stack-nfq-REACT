@@ -35,14 +35,19 @@ class StackList extends Component {
         <main>
           <Filter />
           <ul className="list">
-          {_.sortBy(dataQuestion, 'date').reverse()
-            .map(item => {
-              return (
-                <li className="question__item" key={item.id}>
-                  <Question item={item} />
-                </li>
-              );
-            })}
+            {
+              _.sortBy(dataQuestion, 'date').reverse()
+              .filter((question) => {
+                return question.question.toLowerCase().includes("google".toLowerCase()) || 
+                question.content.toLowerCase().includes("google".toLowerCase());
+              })
+              .map(item => {
+                return (
+                  <li className="question__item" key={item.id}>
+                    <Question item={item} />
+                  </li>
+                );
+              })}
           </ul>
           <FloatingActionButtons dialogueFunction={this.dialogueFunction} />
         </main>
