@@ -3,10 +3,10 @@ import './styles.scss';
 import { withStyles, createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
 import userImage from '../../../images/avatar.png';
 import { formatDate } from '../../../data/commonFunctions';
 import Avatar from '@material-ui/core/Avatar';
+import PropTypes from 'prop-types';
 
 const theme = createMuiTheme({
   palette: {
@@ -53,5 +53,11 @@ function QuestionContent({ item, classes, children }) {
     </ThemeProvider>
   );
 }
+
+QuestionContent.propTypes = {
+  item: PropTypes.object,
+  classes: PropTypes.object,
+  children: PropTypes.object
+};
 
 export default withStyles(styles)(QuestionContent);

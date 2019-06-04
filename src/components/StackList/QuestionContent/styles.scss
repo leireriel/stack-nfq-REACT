@@ -1,24 +1,12 @@
 @import '../../../scss/colors';
 
-.question__main {
-  padding: 0 39px;
-}
-
 .question__title {
   color: $colorgrey;
   margin: 0;
   font-size: 25px;
 }
 
-.section__title {
-  color: $colorgrey;
-  font-weight: normal;
-  font-size: 20px;
-  margin: 65px 0 23px;
-}
-
-.question__date,
-.question__content {
+.question__date {
   color: $colorgrey;
   margin: 0;
 }
@@ -41,11 +29,6 @@
   align-items: center;
 }
 
-.question__content {
-  padding: 50px 80px;
-}
-
-.answer__list,
 .question__tags-list {
   list-style: none;
   padding: 0;
