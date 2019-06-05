@@ -65,11 +65,11 @@ The API of the project will be soon disconnected, but there is an alternative:
 ```
 
 ## 👩🏻‍💻 Authors 
-* [Libertad Chapinal](https://www.linkedin.com/in/libertadchapinalcervantes/) - Responsable Maquetación
-* [Iris Paredes](https://www.linkedin.com/in/iris-paredes-jiménez-654a5144/) - Responsable JavaScript
-* [Leire Rico](https://www.linkedin.com/in/leirerico/) - Responsable de implementación técnica
-* [Carla Rodriguez](https://www.linkedin.com/in/carla-rodriguez-rodriguez/) - Responsable control de versiones
-* [Aia Rupsom](https://www.linkedin.com/in/aia-rupsom/) - Scrum Master Junior
+* [Libertad Chapinal](https://www.linkedin.com/in/libertadchapinalcervantes/)
+* [Iris Paredes](https://www.linkedin.com/in/iris-paredes-jiménez-654a5144/)
+* [Leire Rico](https://www.linkedin.com/in/leirerico/)
+* [Carla Rodriguez](https://www.linkedin.com/in/carla-rodriguez-rodriguez/)
+* [Aia Rupsom](https://www.linkedin.com/in/aia-rupsom/)
 
 ## 🙏🏿 Acknowledgments 
 
