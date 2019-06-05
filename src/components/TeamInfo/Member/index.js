@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import './styles.scss';
+import PropTypes from 'prop-types';
 
 const findClassIcon = iconName => {
   let classForIcon = '';
@@ -23,7 +24,7 @@ const findClassIcon = iconName => {
   return classForIcon;
 };
 
-export default function Member({ member: { name, bio, links, img, role } }) {
+export default function Member({ member: { name, links, img, role } }) {
   return (
     <Fragment>
       <div className="member__image--container">
@@ -44,4 +45,8 @@ export default function Member({ member: { name, bio, links, img, role } }) {
       </div>
     </Fragment>
   );
+}
+
+Member.propTypes = {
+  member: PropTypes.object
 }

@@ -1,19 +1,16 @@
 import React from 'react';
 import './styles.scss';
-import logoStackList from '../../images/LOGO_blue.svg';
 import { Link } from 'react-router-dom';
 
-class Header extends React.Component {
-  render() {
-    return (
-      <div className="container__header">
-        {this.props.children}
-        <Link to="/home" className="header__link-logo">
-          <img className="header__stackList" src={logoStackList} alt="Logotipo de nfq stack" />
-        </Link>
-      </div>
-    );
-  }
+function Header({ children }) {
+  return (
+    <header className="container__header">
+      {children}
+      <Link to="/home" className="header__link-logo">
+        <h1 className="header__stackList">Stack nfq</h1>
+      </Link>
+    </header>
+  );
 }
 
 export default Header;

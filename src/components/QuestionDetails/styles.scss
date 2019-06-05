@@ -27,11 +27,28 @@
 .question__content {
   color: $colorgrey;
   margin: 0;
-  padding: 50px 80px;
+  padding: 50px 20px;
+  @media all and (min-width: $bptablet) {
+    padding: 50px 80px;
+  }
 }
 
 .answer__list {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.error__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.text__error {
+  color: $colorgrey;
+  text-align: center;
+  font-weight: bold;
 }

@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 const useStyles = makeStyles(theme => ({
@@ -9,7 +10,8 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1),
     width: "100%"
   },
-}));
+})
+);
 
 function Filter({handleInputValue}) {
   const classes = useStyles();
@@ -34,5 +36,9 @@ function Filter({handleInputValue}) {
     </Fragment>
   );
 }
+
+Filter.propTypes = {
+  handleInputValue: PropTypes.func
+};
 
 export default Filter;
