@@ -14,10 +14,12 @@
   text-align: right;
 }
 
+.MuiFormLabel-root.Mui-focused {
+  color: $colorblue !important;
+}
+
 .fa-search {
   color: $colorblue;
   transform: rotate(90deg);
   font-size: 30px;
 }
-
-
