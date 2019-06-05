@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "./static/css/main.0b6d4220.chunk.css",
-    "main.js": "./static/js/main.b6f7bd6e.chunk.js",
-    "main.js.map": "./static/js/main.b6f7bd6e.chunk.js.map",
+    "main.css": "./static/css/main.eec6f9d1.chunk.css",
+    "main.js": "./static/js/main.1ef7b130.chunk.js",
+    "main.js.map": "./static/js/main.1ef7b130.chunk.js.map",
     "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
     "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
-    "static/js/2.9359576d.chunk.js": "./static/js/2.9359576d.chunk.js",
-    "static/js/2.9359576d.chunk.js.map": "./static/js/2.9359576d.chunk.js.map",
+    "static/js/2.8bc0f1b6.chunk.js": "./static/js/2.8bc0f1b6.chunk.js",
+    "static/js/2.8bc0f1b6.chunk.js.map": "./static/js/2.8bc0f1b6.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.6bbf73c8158543e984feba9dbc0ecb07.js": "./precache-manifest.6bbf73c8158543e984feba9dbc0ecb07.js",
+    "precache-manifest.2f82843e1a3d2a71ec441169e1c63d4c.js": "./precache-manifest.2f82843e1a3d2a71ec441169e1c63d4c.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.0b6d4220.chunk.css.map": "./static/css/main.0b6d4220.chunk.css.map",
-    "static/media/LOGO.svg": "./static/media/LOGO.a6f02d49.svg",
-    "static/media/LOGO_blue.svg": "./static/media/LOGO_blue.32a521ee.svg",
+    "static/css/main.eec6f9d1.chunk.css.map": "./static/css/main.eec6f9d1.chunk.css.map",
     "static/media/carla-img.jpeg": "./static/media/carla-img.c559a238.jpeg",
     "static/media/iris-img.jpeg": "./static/media/iris-img.5c8acec5.jpeg",
     "static/media/leire-img.jpeg": "./static/media/leire-img.648a0eff.jpeg",
     "static/media/liber-img.jpeg": "./static/media/liber-img.882c00ce.jpeg",
     "static/media/logo-adalab.svg": "./static/media/logo-adalab.471b278d.svg",
-    "static/media/logo-nfq.png": "./static/media/logo-nfq.1fffbe56.png"
+    "static/media/styles.scss": "./static/media/logo-blue.32a521ee.svg",
+    "static/media/logo-nfq.png": "./static/media/logo-nfq.1fffbe56.png",
+    "static/media/logo.svg": "./static/media/logo.a6f02d49.svg"
   }
 }
