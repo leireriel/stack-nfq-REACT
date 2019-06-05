@@ -51,7 +51,7 @@ class Form extends Component {
   handleAddAnswer() {
     this.setState(
       prevState => {
-        const newAnswer = { ...prevState.answerToAdd, date: moment().format('YYYY-MM-DDTHH:MM:SS') };
+        const newAnswer = { ...prevState.answerToAdd, date: moment().format('YYYY-MM-DDTHH:mm:ss') };
         return { answerToAdd: newAnswer };
       },
       () => this.addAnswerToQuestionObject()
@@ -93,29 +93,8 @@ class Form extends Component {
         <Grid item xs={12}>
           <Paper className={classPaper}>
             <form noValidate autoComplete="off">
-              <TextField
-                label="Nombre usuario"
-                fullWidth value={author}
-                onChange={this.handleChange('author')}
-                variant="outlined"
-                type="text" margin="normal"
-                error={error.author}
-                helperText={error.author ? 'Por favor, rellena este campo' : ''}
-                className="name__form--response"
-              />
-              <TextField
-                label="Respuesta"
-                fullWidth value={answer}
-                onChange={this.handleChange('answer')}
-                type="text"
-                variant="outlined"
-                multiline
-                rows="10"
-                margin="normal"
-                error={error.answer}
-                helperText={error.answer ? 'Por favor, rellena este campo' : ''}
-                className="text__form--response"
-              />
+              <TextField label="Nombre usuario" fullWidth value={author} onChange={this.handleChange('author')} variant="outlined" type="text" margin="normal" error={error.author} helperText={error.author ? 'Por favor, rellena este campo' : ''} className="name__form--response" />
+              <TextField label="Respuesta" fullWidth value={answer} onChange={this.handleChange('answer')} type="text" variant="outlined" multiline rows="10" margin="normal" error={error.answer} helperText={error.answer ? 'Por favor, rellena este campo' : ''} className="text__form--response" />
               <div className="buttons__container">
                 <Button variant="contained" className={classButton} onClick={this.resetAnswer} color="secondary">
                   cancelar
