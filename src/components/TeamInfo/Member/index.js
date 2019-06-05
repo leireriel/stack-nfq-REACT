@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import './styles.scss';
+import PropTypes from 'prop-types';
 
 const findClassIcon = iconName => {
   let classForIcon = '';
@@ -45,3 +46,8 @@ export default function Member({ member: { name, links, img, role } }) {
     </Fragment>
   );
 }
+
+Member.propTypes = {
+  member: PropTypes.object
+}
+

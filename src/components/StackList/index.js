@@ -77,4 +77,5 @@ StackList.propTypes = {
   handleInputValue: PropTypes.func,
   searchWord: PropTypes.string
 };
+
 export default StackList;
