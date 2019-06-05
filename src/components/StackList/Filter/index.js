@@ -26,7 +26,6 @@ function Filter({handleInputValue}) {
               <TextField
                 type="text"
                 label="Buscar..."
-                variant="outlined"
                 onChange={handleInputValue}
                 fullWidth />
             </Grid>
