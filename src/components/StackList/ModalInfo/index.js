@@ -129,10 +129,10 @@ class ModalInfo extends Component {
           <DialogActions>
             <Button variant="contained" className="cancel__btn" color="secondary" onClick={dialogueFunction}>
               Cancelar
-          </Button>
+            </Button>
             <Button variant="contained" className="accept__btn" color="primary" disabled={!question || !content || !tags || !author} onClick={this.sendQuestion}>
               Aceptar
-          </Button>
+            </Button>
           </DialogActions>
         </Dialog>
       </ThemeProvider>
