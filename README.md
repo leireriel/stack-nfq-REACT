@@ -16,6 +16,15 @@ You need to install [Node.js](https://nodejs.org/), and then:
 2. Install dependencies with `$ npm install`
 3. Run the project with `$ npm start`
 
+***IMPORTANT!*** 
+The API of the project will be soon disconnected, but there is an alternative: 
+1. Move the db.json file from our project to your local folder
+2. Install `$ npm install -g json-server`
+3. Open your terminal and change directory to the location of the db.json file (and NOT to the project folder)
+4. Run `$ json-server --watch db.json --port 3005`
+5. In services' folder, change the ENDPOINT in createQuestion and fetchQuestion to http://localhost:3005/questions 
+6. In services' folder, change the ENDPOINT in updateQuestion to http://localhost:3005/questions/
+
 ## 📊 Dependencies
 
 * [@material-ui/core](https://www.npmjs.com/package/@material-ui/core) - For app styles
