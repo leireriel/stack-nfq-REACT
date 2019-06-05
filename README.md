@@ -64,7 +64,7 @@ You need to install [Node.js](https://nodejs.org/), and then:
 
 ## 🙏🏿 Acknowledgments 
 
-> Hector Martos - UI/UX Team Manager at NFQ Solutions
-> Verónica Reina Hernández - Senior Frontend Developer
-> José Luis López Hernández - Front-end Analyst
-> and to all the wonderful and amazing adalabers that have been with us through our time at NFQ: Clara, Laura, Alba and Carolina, THANK YOU!
+* Hector Martos - UI/UX Team Manager at NFQ Solutions
+* Verónica Reina Hernández - Senior Frontend Developer
+* José Luis López Hernández - Front-end Analyst
+* and to all the wonderful and amazing adalabers that have been with us through our time at NFQ: Clara, Laura, Alba and Carolina, THANK YOU!
