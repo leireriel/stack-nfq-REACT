@@ -3,6 +3,7 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import { withStyles, createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import PropTypes from 'prop-types';
 
 const theme = createMuiTheme({
   palette: {
@@ -33,5 +34,10 @@ function FloatingActionButtons({ dialogueFunction, classes }) {
     </ThemeProvider>
   );
 }
+
+FloatingActionButtons.propTypes = {
+  dialogueFunction: PropTypes.func,
+  classes: PropTypes.object.isRequired
+};
 
 export default withStyles(styles)(FloatingActionButtons);

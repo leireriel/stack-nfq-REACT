@@ -19,7 +19,10 @@
 }
 
 .header__home {
-  width: 372px;
+  width: 250px;
+  @media all and (min-width: $bptablet){
+    width: 372px;
+  }
 }
 
 .home__main {
@@ -33,11 +36,14 @@
 
 .home__title {
   font-family: $defaultfont;
-  font-size: 30px;
   color: $colorwhite;
   margin: 60px 30px 60px;
   text-align: center;
+  font-size: 25px;
   font-weight: normal;
+  @media all and (min-width: $bptablet){
+    font-size: 30px;
+  }
 }
 
 .info__btn {
@@ -61,7 +67,6 @@
 }
 
 .home__btn-link {
-  width: 400px;
   margin: 0 auto;
 }
 
@@ -72,8 +77,8 @@
 
 .home__btn {
   font-family: $defaultfont;
-  font-size: 33px;
-  width: 400px;
+  font-size: 23px;
+  width: 250px;
   color: $colorgrey;
   height: 70px;
   border-radius: 5px;
@@ -81,6 +86,10 @@
   cursor: pointer;
   background: $colorwhite;
   border: 0;
+  @media all and (min-width: $bptablet){
+    width: 400px;
+    font-size: 33px;
+  }
 }
 
 .home__btn:hover {

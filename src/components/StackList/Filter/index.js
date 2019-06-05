@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 const useStyles = makeStyles(theme => ({
@@ -26,7 +27,6 @@ function Filter({handleInputValue}) {
               <TextField
                 type="text"
                 label="Buscar..."
-                variant="outlined"
                 onChange={handleInputValue}
                 fullWidth />
             </Grid>
@@ -36,5 +36,9 @@ function Filter({handleInputValue}) {
     </Fragment>
   );
 }
+
+Filter.propTypes = {
+  handleInputValue: PropTypes.func
+};
 
 export default Filter;
