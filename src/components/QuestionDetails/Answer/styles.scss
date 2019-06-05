@@ -1,4 +1,5 @@
 @import '../../../scss/colors';
+@import '../../../scss/variables';
 
 .MuiPaper-root.MuiPaper-elevation1.QuestionDetails-paperAnswer-7.MuiPaper-rounded {
   display: flex;
@@ -8,7 +9,10 @@
 .container__text {
   display: flex;
   flex-direction: row;
-  text-align: left;
+  text-align: center;
+  @media all and (min-width: $bptablet){
+    text-align: left;
+  }
 }
 
 .answer__heart {
@@ -33,8 +37,11 @@
 .container__user {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   color: $colorgrey;
+  @media all and (min-width: $bptablet){
+    align-items: flex-end;
+  }
 }
 
 .container__face {
@@ -52,6 +59,8 @@
   height: auto;
 }
 
-.answer__date  {
+.answer__date {
   margin: 0;
+  padding: 0 10px;
+  color: $colorgrey;
 }

@@ -3,11 +3,14 @@
 
 .container__header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 89px;
   padding: 0 39px;
-  position: relative;
+  @media all and (min-width: $bptablet){
+    position: relative;
+    height: 97px;
+  }
 }
 
 .header__stackList {
@@ -25,9 +28,16 @@
 }
 
 .header__button-link {
-  text-decoration: none;
-  color: $colorblue;
-  position: absolute;
-  top: 27px;
-  left: 39px;
+  padding: 30px 0 20px 0;
+  @media all and (min-width: $bptablet){
+    text-decoration: none;
+    color: $colorblue;
+    position: absolute;
+    top: 27px;
+    left: 39px;
+  }
+}
+
+.header__link-image {
+  margin-right: 12px;
 }

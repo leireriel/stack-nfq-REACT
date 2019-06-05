@@ -1,4 +1,6 @@
 @import '../../../scss/colors';
+@import '../../../scss/variables';
+
 
 .filter__wrapper {
   background-color: $colorlightgrey;
@@ -7,7 +9,18 @@
   justify-content: center;
   align-items: center;
   height: 100px;
-  padding: 0 30px;
+  padding: 0 20px;
+  @media all and (min-width: $bptablet){
+    padding: 0 auto;
+  }
+}
+
+.MuiInputBase-input.MuiInput-input{
+  margin: 0 20px;
+  max-width: 700px;
+  @media all and(min-width: $bptablet){
+    max-width: 950px;
+  }
 }
 
 .MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-1 {
