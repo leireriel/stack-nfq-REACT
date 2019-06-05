@@ -50,4 +50,3 @@ export default function Member({ member: { name, links, img, role } }) {
 Member.propTypes = {
   member: PropTypes.object
 }
-
