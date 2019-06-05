@@ -23,6 +23,10 @@ class StackList extends Component {
     window.scrollTo(0, 0);
   }
 
+  componentWillUnmount() {
+    this.props.resetFilter();
+  }
+
   dialogueFunction() {
     this.setState(prevState => {
       return { isOpen: !prevState.isOpen };
@@ -30,13 +34,13 @@ class StackList extends Component {
   }
 
   render() {
-    const { dataQuestion, createNewQuestion, handleInputValue, searchWord } = this.props;
+    const { dataQuestion, createNewQuestion, handleInputValue, searchWord, resetFilter } = this.props;
     const { isOpen } = this.state;
     return (
       <div className="container__stacklist">
         <Header />
         <main className="stacklist__main">
-          <Filter handleInputValue={handleInputValue} />
+          <Filter handleInputValue={handleInputValue} searchWord={searchWord} />
           {dataQuestion.length ? (
             <Fragment>
               <ul className="question__list">
@@ -64,7 +68,7 @@ class StackList extends Component {
             </div>
           )}
         </main>
-        {isOpen && <ModalInfo dialogueFunction={this.dialogueFunction} createNewQuestion={createNewQuestion} arrLength={dataQuestion.length} />}
+        {isOpen && <ModalInfo dialogueFunction={this.dialogueFunction} createNewQuestion={createNewQuestion} arrLength={dataQuestion.length} resetFilter={resetFilter} />}
         <Footer />
       </div>
     );

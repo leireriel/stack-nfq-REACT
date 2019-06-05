@@ -73,6 +73,7 @@ class ModalInfo extends Component {
       }
     }, () => window.scrollTo(0, 0))
     this.props.dialogueFunction();
+    this.props.resetFilter();
   }
 
   render() {

@@ -20,6 +20,7 @@ class App extends Component {
     this.createNewQuestion = this.createNewQuestion.bind(this);
     this.updateQuestionAnswer = this.updateQuestionAnswer.bind(this);
     this.handleInputValue = this.handleInputValue.bind(this);
+    this.resetFilter = this.resetFilter.bind(this);
   }
 
   componentDidMount() {
@@ -60,12 +61,16 @@ class App extends Component {
     });
   }
 
+  resetFilter() {
+    this.setState( {searchWord: ''} );
+  }
+
   render() {
     const { dataQuestion, searchWord } = this.state;
     return (
       <Switch>
         <Route exact path="/home" render={() => <Home />} />
-        <Route exact path="/questions" render={() => <StackList dataQuestion={dataQuestion} handleInputValue={this.handleInputValue} searchWord={searchWord} createNewQuestion={this.createNewQuestion} />} />
+        <Route exact path="/questions" render={() => <StackList dataQuestion={dataQuestion} handleInputValue={this.handleInputValue} searchWord={searchWord} createNewQuestion={this.createNewQuestion} resetFilter={this.resetFilter} />} />
         <Route exact path="/question/:id" render={routeProps => <QuestionDetails id={routeProps.match.params.id} dataQuestion={dataQuestion} updateQuestion={this.updateQuestionAnswer} />} />
         <Route exact path="/team" render={() => <TeamInfo />} />
         <Redirect from="/" to="/home" />

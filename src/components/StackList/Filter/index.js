@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
 })
 );
 
-function Filter({handleInputValue}) {
+function Filter({handleInputValue, searchWord}) {
   const classes = useStyles();
   return (
     <Fragment>
@@ -27,6 +27,7 @@ function Filter({handleInputValue}) {
               <TextField
                 type="text"
                 label="Buscar..."
+                value={searchWord}
                 onChange={handleInputValue}
                 fullWidth />
             </Grid>
