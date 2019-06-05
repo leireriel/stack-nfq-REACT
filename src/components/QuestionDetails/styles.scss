@@ -28,6 +28,9 @@
   color: $colorgrey;
   margin: 0;
   padding: 50px 80px;
+  @media all and (min-width: $bptablet) {
+    padding: 50px 80px;
+  }
 }
 
 .answer__list {
