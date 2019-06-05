@@ -133,6 +133,7 @@ class Form extends Component {
 
 Form.propTypes = {
   classPaper: PropTypes.string.isRequired,
+  classButton: PropTypes.string.isRequired,
   updatedQuestion: PropTypes.func,
   questionItem: PropTypes.object
 };
