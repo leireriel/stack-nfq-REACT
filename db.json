@@ -1,0 +1,152 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "How can I refresh data in the dxDataGrid widget?",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar viverra lobortis. Mauris eget velit quam. Phasellus et accumsan orci. Suspendisse potenti. Phasellus arcu ante, condimentum in nisi et, viverra lobortis nisi. Maecenas dignissim nibh vitae velit porta aliquet. Etiam turpis mauris, sodales ac dui sit amet, vulputate sagittis diam.",
+      "tags": "angular, devextreme",
+      "author": "José Luis",
+      "date": "2019-04-28T15:40:37",
+      "answers": [
+        {
+          "answer": "I think the dxDataGrid widget has a refresh() method.",
+          "author": "Alberto",
+          "likes": 7,
+          "date": "2019-04-30T09:00:12"
+        },
+        {
+          "answer": "Why don't you use another library instead of DevExtreme?",
+          "author": "Juan Manuel",
+          "likes": 0,
+          "date": "2019-04-28T11:36:09"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "How do JavaScript closures work?",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar viverra lobortis. Mauris eget velit quam. Phasellus et accumsan orci. Suspendisse potenti. Phasellus arcu ante, condimentum in nisi et, viverra lobortis nisi. Maecenas dignissim nibh vitae velit porta aliquet. Etiam turpis mauris, sodales ac dui sit amet, vulputate sagittis diam.",
+      "tags": "javascript, function, variables, scope, closures",
+      "author": "Juan",
+      "date": "2019-04-28T08:42:55",
+      "answers": []
+    },
+    {
+      "id": 3,
+      "question": "How do I check if an element is hidden in jQuery?",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar viverra lobortis. Mauris eget velit quam. Phasellus et accumsan orci. Suspendisse potenti. Phasellus arcu ante, condimentum in nisi et, viverra lobortis nisi. Maecenas dignissim nibh vitae velit porta aliquet. Etiam turpis mauris, sodales ac dui sit amet, vulputate sagittis diam.",
+      "tags": "javascript, jquery, dom, visibility",
+      "author": "Elisa",
+      "date": "2019-04-29T17:10:26",
+      "answers": []
+    },
+    {
+      "id": 4,
+      "question": "How do I remove a property from a JavaScript object?",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar viverra lobortis. Mauris eget velit quam. Phasellus et accumsan orci. Suspendisse potenti. Phasellus arcu ante, condimentum in nisi et, viverra lobortis nisi. Maecenas dignissim nibh vitae velit porta aliquet. Etiam turpis mauris, sodales ac dui sit amet, vulputate sagittis diam.",
+      "tags": "javascript, javascript-objects, object-properties",
+      "author": "Tania",
+      "date": "2019-05-03T15:47:10",
+      "answers": []
+    },
+    {
+      "id": 5,
+      "question": "Expand and collapse with table using ng-repeat",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar viverra lobortis. Mauris eget velit quam. Phasellus et accumsan orci. Suspendisse potenti. Phasellus arcu ante, condimentum in nisi et, viverra lobortis nisi. Maecenas dignissim nibh vitae velit porta aliquet. Etiam turpis mauris, sodales ac dui sit amet, vulputate sagittis diam.",
+      "tags": "html, angularjs, angular",
+      "author": "Manuel",
+      "date": "2019-05-03T16:00:07",
+      "answers": []
+    },
+    {
+      "id": 6,
+      "question": "Why use Redux over Facebook Flux?",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar viverra lobortis. Mauris eget velit quam. Phasellus et accumsan orci. Suspendisse potenti. Phasellus arcu ante, condimentum in nisi et, viverra lobortis nisi. Maecenas dignissim nibh vitae velit porta aliquet. Etiam turpis mauris, sodales ac dui sit amet, vulputate sagittis diam.",
+      "tags": "javascript, reactjs, reactjs-flux, flux, redux",
+      "author": "Santi",
+      "date": "2019-05-06T16:00:07",
+      "answers": []
+    },
+    {
+      "id": 7,
+      "question": "How to programmatically navigate using react router?",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar viverra lobortis. Mauris eget velit quam. Phasellus et accumsan orci. Suspendisse potenti. Phasellus arcu ante, condimentum in nisi et, viverra lobortis nisi. Maecenas dignissim nibh vitae velit porta aliquet. Etiam turpis mauris, sodales ac dui sit amet, vulputate sagittis diam.",
+      "tags": "reactjs, react-router",
+      "author": "Raúl",
+      "date": "2019-05-08T16:00:07",
+      "answers": []
+    },
+    {
+      "id": 8,
+      "question": "How to pass props to {this.props.children}",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar viverra lobortis. Mauris eget velit quam. Phasellus et accumsan orci. Suspendisse potenti. Phasellus arcu ante, condimentum in nisi et, viverra lobortis nisi. Maecenas dignissim nibh vitae velit porta aliquet. Etiam turpis mauris, sodales ac dui sit amet, vulputate sagittis diam.",
+      "tags": "javascript, reactjs, reacht-jsx",
+      "author": "Jacky",
+      "date": "2019-05-08T16:00:07",
+      "answers": []
+    },
+    {
+      "id": 9,
+      "question": "How to access child's state in React?",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar viverra lobortis. Mauris eget velit quam. Phasellus et accumsan orci. Suspendisse potenti. Phasellus arcu ante, condimentum in nisi et, viverra lobortis nisi. Maecenas dignissim nibh vitae velit porta aliquet. Etiam turpis mauris, sodales ac dui sit amet, vulputate sagittis diam.",
+      "tags": "javascript, reactjs",
+      "author": "Sofía",
+      "date": "2019-05-09T16:00:07",
+      "answers": []
+    },
+    {
+      "id": 10,
+      "question": "How do I redirect to another webpage?",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar viverra lobortis. Mauris eget velit quam. Phasellus et accumsan orci. Suspendisse potenti. Phasellus arcu ante, condimentum in nisi et, viverra lobortis nisi. Maecenas dignissim nibh vitae velit porta aliquet. Etiam turpis mauris, sodales ac dui sit amet, vulputate sagittis diam.",
+      "tags": "javascript, jquery, redirect",
+      "author": "Olga",
+      "date": "2019-05-10T16:00:07",
+      "answers": []
+    },
+    {
+      "id": 11,
+      "question": "What is the difference between React Native and React?",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar viverra lobortis. Mauris eget velit quam. Phasellus et accumsan orci. Suspendisse potenti. Phasellus arcu ante, condimentum in nisi et, viverra lobortis nisi. Maecenas dignissim nibh vitae velit porta aliquet. Etiam turpis mauris, sodales ac dui sit amet, vulputate sagittis diam.",
+      "tags": "javascript, reactjs, react-native, javascript-framework",
+      "author": "César",
+      "date": "2019-05-11T16:00:07",
+      "answers": []
+    },
+    {
+      "id": 12,
+      "question": "Why do we need middleware for async flow in Redux?",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar viverra lobortis. Mauris eget velit quam. Phasellus et accumsan orci. Suspendisse potenti. Phasellus arcu ante, condimentum in nisi et, viverra lobortis nisi. Maecenas dignissim nibh vitae velit porta aliquet. Etiam turpis mauris, sodales ac dui sit amet, vulputate sagittis diam.",
+      "tags": "javascript, asynchronous, reactjs, redux, redux-thunk",
+      "author": "Alba",
+      "date": "2019-05-11T16:00:07",
+      "answers": []
+    },
+    {
+      "id": 13,
+      "question": "How to dispatch a Redux action with a timeout?",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar viverra lobortis. Mauris eget velit quam. Phasellus et accumsan orci. Suspendisse potenti. Phasellus arcu ante, condimentum in nisi et, viverra lobortis nisi. Maecenas dignissim nibh vitae velit porta aliquet. Etiam turpis mauris, sodales ac dui sit amet, vulputate sagittis diam.",
+      "tags": "javascript, timeout, redux",
+      "author": "Mishell",
+      "date": "2019-05-13T16:00:07",
+      "answers": []
+    },
+    {
+      "id": 14,
+      "question": "How do I return the response from an asynchronous call?",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar viverra lobortis. Mauris eget velit quam. Phasellus et accumsan orci. Suspendisse potenti. Phasellus arcu ante, condimentum in nisi et, viverra lobortis nisi. Maecenas dignissim nibh vitae velit porta aliquet. Etiam turpis mauris, sodales ac dui sit amet, vulputate sagittis diam.",
+      "tags": "javascript, reactjs, react-native, javascript-framework",
+      "author": "Eduardo",
+      "date": "2019-05-14T16:00:07",
+      "answers": []
+    },
+    {
+      "id": 15,
+      "question": "Why does Google prepend while(1); to their JSON responses?",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar viverra lobortis. Mauris eget velit quam. Phasellus et accumsan orci. Suspendisse potenti. Phasellus arcu ante, condimentum in nisi et, viverra lobortis nisi. Maecenas dignissim nibh vitae velit porta aliquet. Etiam turpis mauris, sodales ac dui sit amet, vulputate sagittis diam.",
+      "tags": "javascript, json, ajax, security",
+      "author": "Clara",
+      "date": "2019-05-16T16:00:07",
+      "answers": []
+    }
+  ]
+}
