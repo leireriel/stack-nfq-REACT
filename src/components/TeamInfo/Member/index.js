@@ -23,7 +23,7 @@ const findClassIcon = iconName => {
   return classForIcon;
 };
 
-export default function Member({ member: { name, bio, links, img, role } }) {
+export default function Member({ member: { name, links, img, role } }) {
   return (
     <Fragment>
       <div className="member__image--container">
