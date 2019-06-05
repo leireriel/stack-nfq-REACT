@@ -20,7 +20,7 @@
 
 .header__home {
   width: 250px;
-  @media all and (min-width: $bptablet){
+  @media all and (min-width: $bptablet) {
     width: 372px;
   }
 }
@@ -41,7 +41,7 @@
   text-align: center;
   font-size: 25px;
   font-weight: normal;
-  @media all and (min-width: $bptablet){
+  @media all and (min-width: $bptablet) {
     font-size: 30px;
   }
 }
@@ -86,7 +86,7 @@
   cursor: pointer;
   background: $colorwhite;
   border: 0;
-  @media all and (min-width: $bptablet){
+  @media all and (min-width: $bptablet) {
     width: 400px;
     font-size: 33px;
   }
