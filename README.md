@@ -1,11 +1,11 @@
-![STACK NFQ](docs/static/media/logo-stackList.svg)
+![STACK NFQ](docs/static/media/logo-blue.32a521ee.svg)
 
 # STACK NFQ
 ## This is a SPA created with #reactJS⚛
 
 Developed with ❤️ by ***GirlsOverflow*** and data provided by [NFQ](http://nfq.es/en) :)
 
-![NFQ](docs/static/media/logo-nfq.png)
+![NFQ](docs/static/media/logo-nfq.1fffbe56.png)
 
 Our project is called StackNFQ and consists of a SPA where NFQ's developers can find solutions to recurrent programming dificulties. Also, they will be able to propose questions to their possible doubts in order to improve the efficency of the company's programming processes when creating their own products. The platform is aimed at improving communication between colleagues by sharing their knowledge acquired while developing at NFQ. 
 
