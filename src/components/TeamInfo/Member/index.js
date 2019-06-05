@@ -24,7 +24,7 @@ const findClassIcon = iconName => {
   return classForIcon;
 };
 
-export default function Member({ member: { name, links, img, role } }) {
+export default function Member({ member: { name, links, img } }) {
   return (
     <Fragment>
       <div className="member__image--container">
@@ -32,7 +32,6 @@ export default function Member({ member: { name, links, img, role } }) {
       </div>
       <div className="member__content">
         <h2 className="member__name">{name}</h2>
-        <p className="member__role">{role}</p>
         <ul className="member__linkList">
           {links.map((link, index) => (
             <li className="member__linkItem" key={index}>
