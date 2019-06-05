@@ -15,13 +15,13 @@ const dataMembers = [
     name: 'Iris Paredes',
     img: irisImg,
     links: [{ name: 'github', src: 'https://github.com/irisparedes' }, { name: 'linkedin', src: 'https://www.linkedin.com/in/iris-paredes-jiménez-654a5144/' }, { name: 'twitter', src: 'https://twitter.com/irisloranca' }, { name: 'email', src: 'mailto:irisparedesjimenez@gmail.com ' }],
-    role: 'Responsable Javascript'
+    role: 'Responsable JavaScript'
   },
   {
     name: 'Leire Rico',
     img: leireImg,
     links: [{ name: 'github', src: 'https://github.com/leireriel' }, { name: 'linkedin', src: 'https://www.linkedin.com/in/leirerico/' }, { name: 'twitter', src: 'https://twitter.com/leireriel1' }, { name: 'email', src: 'mailto:leirericop@gmail.com' }],
-    role: 'Responsable Comunicación con la empresa'
+    role: 'Responsable de implementación técnica'
   },
   {
     name: 'Carla Rodriguez',
