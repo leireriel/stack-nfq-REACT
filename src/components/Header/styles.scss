@@ -6,7 +6,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // height: 89px;
   padding: 0 39px;
   @media all and (min-width: $bptablet){
     position: relative;
@@ -29,7 +28,7 @@
 }
 
 .header__button-link {
-  padding: 0 0 40px 0;
+  padding: 30px 0 20px 0;
   @media all and (min-width: $bptablet){
     text-decoration: none;
     color: $colorblue;
